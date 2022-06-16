@@ -109,9 +109,17 @@
 		B1412ABF285B2C76006ED59E /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B1412AC0285B2C84006ED59E /* APIClient.swift */,
+				B1412AC2285B2CE6006ED59E /* Client */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		B1412AC2285B2CE6006ED59E /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				B1412AC0285B2C84006ED59E /* APIClient.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
