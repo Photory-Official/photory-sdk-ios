@@ -16,9 +16,10 @@
 		A9F0AB73285B32C4001171F1 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB72285B32C4001171F1 /* Room.swift */; };
 		A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB74285B32D6001171F1 /* RoomManager.swift */; };
 		B1412AC1285B2C84006ED59E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AC0285B2C84006ED59E /* APIClient.swift */; };
-		B1412AC5285B2EB8006ED59E /* RoomCreateReqeust.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AC4285B2EB8006ED59E /* RoomCreateReqeust.swift */; };
+		B1412AC5285B2EB8006ED59E /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AC4285B2EB8006ED59E /* SignUpRequest.swift */; };
 		B1412AC7285B2F05006ED59E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AC6285B2F05006ED59E /* Request.swift */; };
 		B1412ACA285B2F2C006ED59E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AC9285B2F2C006ED59E /* Response.swift */; };
+		B1412ACD285B302F006ED59E /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412ACC285B302F006ED59E /* SignUpResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +43,10 @@
 		A9F0AB72285B32C4001171F1 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		A9F0AB74285B32D6001171F1 /* RoomManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
 		B1412AC0285B2C84006ED59E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		B1412AC4285B2EB8006ED59E /* RoomCreateReqeust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreateReqeust.swift; sourceTree = "<group>"; };
+		B1412AC4285B2EB8006ED59E /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		B1412AC6285B2F05006ED59E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		B1412AC9285B2F2C006ED59E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		B1412ACC285B302F006ED59E /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +117,10 @@
 		B1412ABF285B2C76006ED59E /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B1412AC8285B2F09006ED59E /* Common */,
 				B1412AC2285B2CE6006ED59E /* Client */,
+				B1412ACB285B2FF1006ED59E /* Auth */,
 				B1412AC3285B2E32006ED59E /* Room */,
+				B1412AC8285B2F09006ED59E /* Common */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -133,7 +136,6 @@
 		B1412AC3285B2E32006ED59E /* Room */ = {
 			isa = PBXGroup;
 			children = (
-				B1412AC4285B2EB8006ED59E /* RoomCreateReqeust.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -145,6 +147,15 @@
 				B1412AC9285B2F2C006ED59E /* Response.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B1412ACB285B2FF1006ED59E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B1412AC4285B2EB8006ED59E /* SignUpRequest.swift */,
+				B1412ACC285B302F006ED59E /* SignUpResponse.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +274,8 @@
 				A9F0AB73285B32C4001171F1 /* Room.swift in Sources */,
 				A9F0AB6F285B2CBA001171F1 /* Kaleub.swift in Sources */,
 				B1412AC1285B2C84006ED59E /* APIClient.swift in Sources */,
-				B1412AC5285B2EB8006ED59E /* RoomCreateReqeust.swift in Sources */,
+				B1412AC5285B2EB8006ED59E /* SignUpRequest.swift in Sources */,
+				B1412ACD285B302F006ED59E /* SignUpResponse.swift in Sources */,
 				B1412ACA285B2F2C006ED59E /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
