@@ -8,6 +8,14 @@
 import Foundation
 
 public class Room {
+    var id: String
+    var code: String
+    var ownerEmail: String
+    
+    init(id: String, ownerEmail: String) {
+        
+    }
+    
 //    let apiClient
     public enum Role {
         case host

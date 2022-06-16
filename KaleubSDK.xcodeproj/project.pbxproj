@@ -20,6 +20,9 @@
 		B1412AD7285B38A3006ED59E /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AD6285B38A3006ED59E /* SignUpRequest.swift */; };
 		B1412ADA285B38C2006ED59E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AD9285B38C2006ED59E /* Request.swift */; };
 		B1412ADC285B38D3006ED59E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412ADB285B38D3006ED59E /* Response.swift */; };
+		B1412ADF285B40C3006ED59E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412ADE285B40C3006ED59E /* User.swift */; };
+		B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AE1285B4A91006ED59E /* RoomListRequest.swift */; };
+		B1412AE4285B4ABB006ED59E /* RoomListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AE3285B4ABB006ED59E /* RoomListResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		B1412AD6285B38A3006ED59E /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		B1412AD9285B38C2006ED59E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		B1412ADB285B38D3006ED59E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		B1412ADE285B40C3006ED59E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B1412AE1285B4A91006ED59E /* RoomListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListRequest.swift; sourceTree = "<group>"; };
+		B1412AE3285B4ABB006ED59E /* RoomListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 		A9F0AB53285B22B0001171F1 /* KaleubSDK */ = {
 			isa = PBXGroup;
 			children = (
+				B1412ADD285B4011006ED59E /* Models */,
 				B1412ACF285B3830006ED59E /* API */,
 				A9F0AB6E285B2CBA001171F1 /* Kaleub.swift */,
 				A9F0AB70285B2CFC001171F1 /* KaleubMain.swift */,
@@ -119,9 +126,10 @@
 		B1412ACF285B3830006ED59E /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B1412AD8285B38AE006ED59E /* Common */,
-				B1412AD3285B387E006ED59E /* Auth */,
+				B1412AE0285B4A4E006ED59E /* Room */,
 				B1412AD2285B3843006ED59E /* Client */,
+				B1412AD3285B387E006ED59E /* Auth */,
+				B1412AD8285B38AE006ED59E /* Common */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -137,8 +145,8 @@
 		B1412AD3285B387E006ED59E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				B1412AD4285B3892006ED59E /* SignUpResonse.swift */,
 				B1412AD6285B38A3006ED59E /* SignUpRequest.swift */,
+				B1412AD4285B3892006ED59E /* SignUpResonse.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -150,6 +158,23 @@
 				B1412ADB285B38D3006ED59E /* Response.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B1412ADD285B4011006ED59E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1412ADE285B40C3006ED59E /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B1412AE0285B4A4E006ED59E /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				B1412AE1285B4A91006ED59E /* RoomListRequest.swift */,
+				B1412AE3285B4ABB006ED59E /* RoomListResponse.swift */,
+			);
+			path = Room;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1412AE4285B4ABB006ED59E /* RoomListResponse.swift in Sources */,
 				A9F0AB56285B22B0001171F1 /* KaleubSDK.docc in Sources */,
 				B1412AD5285B3892006ED59E /* SignUpResonse.swift in Sources */,
+				B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */,
 				A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */,
 				A9F0AB71285B2CFC001171F1 /* KaleubMain.swift in Sources */,
 				B1412ADC285B38D3006ED59E /* Response.swift in Sources */,
@@ -271,6 +298,7 @@
 				A9F0AB6F285B2CBA001171F1 /* Kaleub.swift in Sources */,
 				B1412ADA285B38C2006ED59E /* Request.swift in Sources */,
 				B1412AD1285B383F006ED59E /* APIClient.swift in Sources */,
+				B1412ADF285B40C3006ED59E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

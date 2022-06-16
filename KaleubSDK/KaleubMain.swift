@@ -10,6 +10,7 @@ import Foundation
 class KaleubMain {
     let version: String = "1.0.0" // [NEXT_VERSION]
     let roomManager = RoomManager()
+    let apiClient = APIClient()
     
     // MARK: - Sign up
     func checkEmailValidation(email: String) {
@@ -28,8 +29,17 @@ class KaleubMain {
         
     }
     
-    func signUp(email: String, password: String) {
+    func signUp(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         
+        let request = SignUpRequest(email: email, password: password)
+        apiClient.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response.token)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     // MARK: - Sign in

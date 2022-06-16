@@ -9,4 +9,5 @@ import Foundation
 
 protocol Response: Decodable {
     associatedtype RequestType: Request
+    
 }

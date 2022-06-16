@@ -1,5 +1,5 @@
 //
-//  SignUpRequest.swift
+//  RoomListRequest.swift
 //  KaleubSDK
 //
 //  Created by Hamlit Jason on 2022/06/16.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct SignUpRequest: Request, Respondable {
-    typealias ResponseType = SignUpResponse
+struct RoomListRequest: Request, Respondable {
+    typealias ResponseType = RoomListResponse
     let email: String
     let password: String
     
-    let method: APIClient.Method = .post
+    let method: APIClient.Method = .get
     
-    var key: String { "auth/signup" }
+    var key: String { "room" }
     
     func urlRequst(baseURL: URL) -> URLRequest? {
         guard let url = URL(string: "\(baseURL)/\(key)") else {
@@ -23,7 +23,7 @@ struct SignUpRequest: Request, Respondable {
 
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
-//        urlRequest.addValue("Bearer", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
 }

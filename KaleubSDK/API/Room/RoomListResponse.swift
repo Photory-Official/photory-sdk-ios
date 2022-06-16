@@ -1,5 +1,5 @@
 //
-//  SignUpResonse.swift
+//  RoomListResponse.swift
 //  KaleubSDK
 //
 //  Created by Hamlit Jason on 2022/06/16.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct SignUpResponse: Response, Decodable {
+struct RoomListResponse: Response, Decodable {
     let token: User
     
-    typealias RequestType = SignUpRequest
+    typealias RequestType = RoomListRequest
     
     enum CodingKeys: String, CodingKey {
         case status
