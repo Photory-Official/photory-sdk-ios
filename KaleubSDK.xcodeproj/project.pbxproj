@@ -11,6 +11,10 @@
 		A9F0AB5C285B22B0001171F1 /* KaleubSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F0AB51285B22B0001171F1 /* KaleubSDK.framework */; };
 		A9F0AB61285B22B0001171F1 /* KaleubSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB60285B22B0001171F1 /* KaleubSDKTests.swift */; };
 		A9F0AB62285B22B0001171F1 /* KaleubSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F0AB54285B22B0001171F1 /* KaleubSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9F0AB6F285B2CBA001171F1 /* Kaleub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB6E285B2CBA001171F1 /* Kaleub.swift */; };
+		A9F0AB71285B2CFC001171F1 /* KaleubMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB70285B2CFC001171F1 /* KaleubMain.swift */; };
+		A9F0AB73285B32C4001171F1 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB72285B32C4001171F1 /* Room.swift */; };
+		A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB74285B32D6001171F1 /* RoomManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		A9F0AB55285B22B0001171F1 /* KaleubSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = KaleubSDK.docc; sourceTree = "<group>"; };
 		A9F0AB5B285B22B0001171F1 /* KaleubSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaleubSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F0AB60285B22B0001171F1 /* KaleubSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaleubSDKTests.swift; sourceTree = "<group>"; };
+		A9F0AB6E285B2CBA001171F1 /* Kaleub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaleub.swift; sourceTree = "<group>"; };
+		A9F0AB70285B2CFC001171F1 /* KaleubMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaleubMain.swift; sourceTree = "<group>"; };
+		A9F0AB72285B32C4001171F1 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		A9F0AB74285B32D6001171F1 /* RoomManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				A9F0AB54285B22B0001171F1 /* KaleubSDK.h */,
+				A9F0AB6E285B2CBA001171F1 /* Kaleub.swift */,
+				A9F0AB70285B2CFC001171F1 /* KaleubMain.swift */,
+				A9F0AB76285B32EC001171F1 /* Room */,
 				A9F0AB55285B22B0001171F1 /* KaleubSDK.docc */,
 			);
 			path = KaleubSDK;
@@ -83,6 +94,15 @@
 				A9F0AB60285B22B0001171F1 /* KaleubSDKTests.swift */,
 			);
 			path = KaleubSDKTests;
+			sourceTree = "<group>";
+		};
+		A9F0AB76285B32EC001171F1 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				A9F0AB72285B32C4001171F1 /* Room.swift */,
+				A9F0AB74285B32D6001171F1 /* RoomManager.swift */,
+			);
+			path = Room;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +215,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9F0AB56285B22B0001171F1 /* KaleubSDK.docc in Sources */,
+				A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */,
+				A9F0AB71285B2CFC001171F1 /* KaleubMain.swift in Sources */,
+				A9F0AB73285B32C4001171F1 /* Room.swift in Sources */,
+				A9F0AB6F285B2CBA001171F1 /* Kaleub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +422,7 @@
 		A9F0AB69285B22B0001171F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -414,6 +439,7 @@
 		A9F0AB6A285B22B0001171F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
