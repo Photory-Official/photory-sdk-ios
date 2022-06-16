@@ -23,6 +23,7 @@
 		B1412ADF285B40C3006ED59E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412ADE285B40C3006ED59E /* User.swift */; };
 		B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AE1285B4A91006ED59E /* RoomListRequest.swift */; };
 		B1412AE4285B4ABB006ED59E /* RoomListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AE3285B4ABB006ED59E /* RoomListResponse.swift */; };
+		B1412AE6285B4D8B006ED59E /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AE5285B4D8B006ED59E /* APIClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B1412ADE285B40C3006ED59E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B1412AE1285B4A91006ED59E /* RoomListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListRequest.swift; sourceTree = "<group>"; };
 		B1412AE3285B4ABB006ED59E /* RoomListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListResponse.swift; sourceTree = "<group>"; };
+		B1412AE5285B4D8B006ED59E /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		A9F0AB5F285B22B0001171F1 /* KaleubSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				B1412AE5285B4D8B006ED59E /* APIClientTests.swift */,
 				A9F0AB60285B22B0001171F1 /* KaleubSDKTests.swift */,
 			);
 			path = KaleubSDKTests;
@@ -117,7 +120,6 @@
 		A9F0AB76285B32EC001171F1 /* Room */ = {
 			isa = PBXGroup;
 			children = (
-				A9F0AB72285B32C4001171F1 /* Room.swift */,
 				A9F0AB74285B32D6001171F1 /* RoomManager.swift */,
 			);
 			path = Room;
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B1412ADE285B40C3006ED59E /* User.swift */,
+				A9F0AB72285B32C4001171F1 /* Room.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9F0AB61285B22B0001171F1 /* KaleubSDKTests.swift in Sources */,
+				B1412AE6285B4D8B006ED59E /* APIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

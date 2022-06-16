@@ -8,13 +8,17 @@
 import Foundation
 
 public class Room {
-    var id: String
-    var code: String
-    var ownerEmail: String
+    public var code: Int
+    public var ownerEmail: String
+    public var title: String
+    public var password: String
+    public var participantsCount: Int
+    public var createdDate: String
+    public var modifiedDate: String
     
-    init(id: String, ownerEmail: String) {
-        
-    }
+    init(code: String,
+    
+    )
     
 //    let apiClient
     public enum Role {

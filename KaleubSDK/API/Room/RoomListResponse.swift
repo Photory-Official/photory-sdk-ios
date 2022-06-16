@@ -8,7 +8,7 @@
 import Foundation
 
 struct RoomListResponse: Response, Decodable {
-    let token: User
+    let rooms: [Room]
     
     typealias RequestType = RoomListRequest
     
@@ -20,13 +20,20 @@ struct RoomListResponse: Response, Decodable {
         enum DataKeys: String, CodingKey {
             case id
             case code
+            case ownerEmail
+            case title
+            case password
+            case participantsCount
+            case createdDate
+            case modifiedDate
         }
         
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let nestedContainer = container.nestedContainer(keyedBy: CodingKeys.DataKeys.self, forKey: .data)
-        id = nestedContainer.decode(Int.self, forKey: .id)
+        let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.DataKeys.self, forKey: .data)
+//        id = nestedContainer.decode(Int.self, forKey: .id)
+        rooms.code = nestedContainer.decode(String.self, forKey: .code)
     }
 }
