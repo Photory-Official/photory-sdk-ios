@@ -61,6 +61,8 @@ class APIClient: ObservableObject {
         // NOTE: - status 500번대가 내려옵니다 포스트맨에서는 정상적으로 작동 확인했는데 해결이 필요합니다.
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             // NOTE: - 서버가 죽은 경우 컴플리션이 호출되지 않습니다!
+            print(response)
+            
             if let error = error {
                 resultHandler(.failure(error))
                 return

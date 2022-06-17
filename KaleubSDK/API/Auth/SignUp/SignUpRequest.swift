@@ -11,7 +11,6 @@ struct SignUpRequest: Request, Respondable {
     typealias ResponseType = SignUpResponse
     let email: String
     let password: String
-    
     let method: APIClient.Method = .post
     
     var key: String { "auth/signup" }
@@ -23,6 +22,10 @@ struct SignUpRequest: Request, Respondable {
 
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
+        
+        let object = ["email": email, "password": password]
+        let data = try? JSONSerialization.data(withJSONObject: object, options: [])
+        urlRequest.httpBody = data
         return urlRequest
     }
 }

@@ -22,7 +22,7 @@ class APIClientTestsSignUp: XCTestCase {
     // MARK: - SignUp
     
     func test_signUp() throws {
-        let email = "heyazoo127@gmail.com"
+        let email = "heyazoo12007@gmail.com"
         let password = "12a3456"
         
         let expectation = XCTestExpectation()
@@ -31,7 +31,7 @@ class APIClientTestsSignUp: XCTestCase {
         apiClient?.signUp(email: email, password: password) { result in
             switch result {
             case .success(let response):
-                XCTAssert(response != nil)
+                XCTAssert(response == nil)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
