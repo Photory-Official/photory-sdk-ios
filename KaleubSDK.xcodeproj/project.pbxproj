@@ -35,6 +35,8 @@
 		B1C86C65285C6FE7002B28C5 /* SendVerificationMailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C64285C6FE7002B28C5 /* SendVerificationMailResponse.swift */; };
 		B1C86C67285C71F3002B28C5 /* CheckVerificationValidationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C66285C71F3002B28C5 /* CheckVerificationValidationRequest.swift */; };
 		B1C86C69285C7201002B28C5 /* CheckVerificationValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C68285C7201002B28C5 /* CheckVerificationValidationResponse.swift */; };
+		B1C86C6C285C7483002B28C5 /* APIClient.SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */; };
+		B1C86C6E285C7502002B28C5 /* APIClient.SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		B1C86C64285C6FE7002B28C5 /* SendVerificationMailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendVerificationMailResponse.swift; sourceTree = "<group>"; };
 		B1C86C66285C71F3002B28C5 /* CheckVerificationValidationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVerificationValidationRequest.swift; sourceTree = "<group>"; };
 		B1C86C68285C7201002B28C5 /* CheckVerificationValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVerificationValidationResponse.swift; sourceTree = "<group>"; };
+		B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignUp.swift; sourceTree = "<group>"; };
+		B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				B1412AD0285B383F006ED59E /* APIClient.swift */,
+				B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */,
+				B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -391,8 +397,10 @@
 				B1412AD1285B383F006ED59E /* APIClient.swift in Sources */,
 				B1C86C5C285C6929002B28C5 /* CheckEmailValidationRequest.swift in Sources */,
 				B1412ADF285B40C3006ED59E /* User.swift in Sources */,
+				B1C86C6C285C7483002B28C5 /* APIClient.SignUp.swift in Sources */,
 				B1C86C67285C71F3002B28C5 /* CheckVerificationValidationRequest.swift in Sources */,
 				B1C86C4E285C4789002B28C5 /* SignInRequest.swift in Sources */,
+				B1C86C6E285C7502002B28C5 /* APIClient.SignIn.swift in Sources */,
 				B1C86C69285C7201002B28C5 /* CheckVerificationValidationResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
