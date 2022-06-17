@@ -58,19 +58,25 @@ class APIClient: ObservableObject {
         )
         
         print(urlRequest)
-        // NOTE: - urlRequest가 포스트맨에서 올바른데, dataTask쪽으로 코드가 들어가지 않습니다.
+        // NOTE: - status 500번대가 내려옵니다 포스트맨에서는 정상적으로 작동 확인했는데 해결이 필요합니다.
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            print("data \(data)")
+            print("response \(response)")
+            print("error \(error)")
             
             if let error = error {
                 resultHandler(.failure(error))
                 return
             }
+            
             guard let data = data else {
                 resultHandler(.failure(APIError.noDataFromResponse))
                 return
             }
+            
             guard let response = response as? HTTPURLResponse, (200..<300) ~= response.statusCode else {
                 resultHandler(.failure(APIError.failedToRequest))
+                
                 return
             }
             
@@ -78,6 +84,7 @@ class APIClient: ObservableObject {
                 resultHandler(.failure(APIError.failedToDecodeResponse))
                 return
             }
+            
             resultHandler(.success(output))
         }
         .resume()
