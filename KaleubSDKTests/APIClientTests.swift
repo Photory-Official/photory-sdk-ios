@@ -9,14 +9,14 @@ import XCTest
 @testable import KaleubSDK
 
 class APIClientTestsSignUp: XCTestCase {
-    let client = APIClient()
+    var apiClient: APIClient?
     
     override func setUp() {
-        
+        apiClient = APIClient()
     }
 
     override func tearDown() {
-        
+        apiClient = APIClient()
     }
 
     // MARK: - SignUp
@@ -28,7 +28,7 @@ class APIClientTestsSignUp: XCTestCase {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        client.signUp(email: email, password: password) { result in
+        apiClient?.signUp(email: email, password: password) { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -44,7 +44,7 @@ class APIClientTestsSignUp: XCTestCase {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        client.checkEmailValidation(email: "heyazoo1007@gmail.com") { result in
+        apiClient?.checkEmailValidation(email: "heyazoo1007@gmail.com") { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -62,7 +62,7 @@ class APIClientTestsSignUp: XCTestCase {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        client.sendVerificationMail(to: "heyazoo1007@gmail.com") { result in
+        apiClient?.sendVerificationMail(to: "heyazoo1007@gmail.com") { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -83,7 +83,7 @@ class APIClientTestsSignUp: XCTestCase {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        client.checkVerificationValidation(email: email, authKey: authKey) { result in
+        apiClient?.checkVerificationValidation(email: email, authKey: authKey) { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -103,7 +103,7 @@ class APIClientTestsSignUp: XCTestCase {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        client.checkPasswordValidation(password: password) { result in
+        apiClient?.checkPasswordValidation(password: password) { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -127,8 +127,7 @@ class APIClientTestsSignUp: XCTestCase {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
 
-        let client = APIClient()
-        client.signIn(email: email, password: password) { result in
+        apiClient?.signIn(email: email, password: password) { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -150,8 +149,7 @@ class APIClientTestsSignUp: XCTestCase {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
 
-        let client = APIClient()
-        client.signIn { result in
+        apiClient?.signIn { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
