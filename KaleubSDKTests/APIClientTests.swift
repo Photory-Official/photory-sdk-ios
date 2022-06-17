@@ -47,7 +47,27 @@ class APIClientTests: XCTestCase {
         client.send(request) { result in
             switch result {
             case .success(let response):
-                print(response.stringtest)
+                XCTAssert(response != nil)
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 120)
+    }
+    
+    func test_sign_in_token() throws {
+        let request = SignInTokenRequest()
+
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+
+        let client = APIClient()
+        client.send(request) { result in
+            switch result {
+            case .success(let response):
                 XCTAssert(response != nil)
             case .failure(let error):
                 XCTFail(error.localizedDescription)

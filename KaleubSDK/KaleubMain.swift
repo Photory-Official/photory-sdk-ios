@@ -30,14 +30,10 @@ class KaleubMain {
     }
     
     func signUp(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        
-        let request = SignUpRequest(email: email, password: password)
-        apiClient.send(request) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-            case .failure(let error):
-                print(error.localizedDescription)
+        // NOTE: 이런 구조를 사용할 예정입니다. 깃헙 공동 작업시 충돌 방지를 위해 기록합니다.
+        apiClient.signUp(email: email, password: password) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
             }
         }
     }

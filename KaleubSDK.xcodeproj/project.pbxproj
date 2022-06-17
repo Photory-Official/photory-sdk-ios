@@ -28,6 +28,7 @@
 		B1C86C51285C47A1002B28C5 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C50285C47A1002B28C5 /* SignInResponse.swift */; };
 		B1C86C55285C5153002B28C5 /* AppStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C54285C5153002B28C5 /* AppStorageManager.swift */; };
 		B1C86C58285C51B6002B28C5 /* StringSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C57285C51B6002B28C5 /* StringSet.swift */; };
+		B1C86C5A285C5A72002B28C5 /* SignInTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C59285C5A72002B28C5 /* SignInTokenRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B1C86C50285C47A1002B28C5 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		B1C86C54285C5153002B28C5 /* AppStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageManager.swift; sourceTree = "<group>"; };
 		B1C86C57285C51B6002B28C5 /* StringSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSet.swift; sourceTree = "<group>"; };
+		B1C86C59285C5A72002B28C5 /* SignInTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTokenRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		B1C86C52285C47A6002B28C5 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				B1C86C59285C5A72002B28C5 /* SignInTokenRequest.swift */,
 				B1C86C4D285C4789002B28C5 /* SignInRequest.swift */,
 				B1C86C50285C47A1002B28C5 /* SignInResponse.swift */,
 			);
@@ -330,6 +333,7 @@
 				B1412AD5285B3892006ED59E /* SignUpResonse.swift in Sources */,
 				B1C86C55285C5153002B28C5 /* AppStorageManager.swift in Sources */,
 				B1C86C51285C47A1002B28C5 /* SignInResponse.swift in Sources */,
+				B1C86C5A285C5A72002B28C5 /* SignInTokenRequest.swift in Sources */,
 				B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */,
 				B1C86C58285C51B6002B28C5 /* StringSet.swift in Sources */,
 				A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */,

@@ -46,7 +46,7 @@ class APIClient: ObservableObject {
         self.baseURL = baseURL
     }
 
-    func send<RequestType: Request & Respondable>(_ request: RequestType, resultHandler: @escaping (Result<RequestType.ResponseType, Error>) -> Void) {
+    private func send<RequestType: Request & Respondable>(_ request: RequestType, resultHandler: @escaping (Result<RequestType.ResponseType, Error>) -> Void) {
         
         guard var urlRequest = request.urlRequst(baseURL: baseURL) else {
             resultHandler(.failure(APIError.invalidURLRequest))
@@ -60,10 +60,7 @@ class APIClient: ObservableObject {
         print(urlRequest)
         // NOTE: - status 500번대가 내려옵니다 포스트맨에서는 정상적으로 작동 확인했는데 해결이 필요합니다.
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            print("data \(data)")
-            print("response \(response)")
-            print("error \(error)")
-            
+            // NOTE: - 서버가 죽은 경우 컴플리션이 호출되지 않습니다!
             if let error = error {
                 resultHandler(.failure(error))
                 return
@@ -88,5 +85,26 @@ class APIClient: ObservableObject {
             resultHandler(.success(output))
         }
         .resume()
+    }
+    
+    func signUp(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = SignUpRequest(email: email, password: password)
+        self.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func sendFeedback(_ feedback: Feedback, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = FeedbackRequest(feedback: feedback)
+        guard apiKey != nil else {
+            resultHandler(.success(()))
+            return
+        }
+        self.send(request, resultHandler: resultHandler)
     }
 }
