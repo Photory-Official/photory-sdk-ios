@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct SignUpEmailCheckResponse: Response, Decodable {
-    typealias RequestType = SignUpEmailCheckRequest
+struct checkEmailValidationResponse: Response, Decodable {
+    typealias RequestType = CheckEmailValidationRequest
     
     enum CodingKeys: String, CodingKey {
         case status

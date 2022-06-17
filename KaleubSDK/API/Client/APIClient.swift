@@ -102,7 +102,7 @@ class APIClient: ObservableObject {
     }
     
     func checkEmailValidation(email: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        let request = SignUpEmailCheckRequest(email: email)
+        let request = CheckEmailValidationRequest(email: email)
         self.send(request) { result in
             switch result {
             case .success(let response):
