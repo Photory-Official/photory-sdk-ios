@@ -23,7 +23,6 @@ struct SignUpRequest: Request, Respondable {
 
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
-//        urlRequest.addValue("Bearer", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
 }
