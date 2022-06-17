@@ -27,7 +27,7 @@ class APIClientTestsSignUp: XCTestCase {
     
     func test_signUp() throws {
         // statusCode: 200 - KaleubSDK.APIClient.APIError 오류 4. 디코딩 에러
-        let email = "heyaazoa07a@gmail.com"
+        let email = "heyaeazoa07a@gmail.com"
         let password = "12a3456"
         
         let expectation = XCTestExpectation()
@@ -36,7 +36,7 @@ class APIClientTestsSignUp: XCTestCase {
         apiClient?.signUp(email: email, password: password) { result in
             switch result {
             case .success(let response):
-                XCTAssert(true)
+                XCTAssertTrue(true)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
@@ -128,7 +128,7 @@ class APIClientTestsSignUp: XCTestCase {
     // MARK: - SignIn
     
     func test_signIn() throws {
-        let email = "heyazoo1007@gmail.com"
+        let email = "heyazoso1007@gmail.com"
         let password = "1234a56"
         
         let expectation = XCTestExpectation()
@@ -150,7 +150,7 @@ class APIClientTestsSignUp: XCTestCase {
     
     
     
-    func test_signIn_token() throws {
+    func test_signInToken() throws {
         let request = SignInTokenRequest()
 
         let expectation = XCTestExpectation()
