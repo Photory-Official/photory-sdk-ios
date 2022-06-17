@@ -22,6 +22,11 @@ struct CheckPasswordValidationRequest: Request, Respondable {
 
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
+        
+        let object = ["password": password]
+        let data = try? JSONSerialization.data(withJSONObject: object, options: [])
+        urlRequest.httpBody = data
+        
         return urlRequest
     }
 }
