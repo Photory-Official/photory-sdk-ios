@@ -10,7 +10,9 @@ import Foundation
 struct SignInResponse: Response, Decodable {
     typealias RequestType = SignInRequest
     
-    let user: User
+    let status: Int
+    let message: String
+    let data: User
     
     enum CodingKeys: String, CodingKey {
         case status
@@ -22,9 +24,13 @@ struct SignInResponse: Response, Decodable {
         }
     }
     
+    // NOTE: - 디코딩 이렇게 하는게 맞는지 점검이 필요합니다.
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 //        let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.DataKeys.self, forKey: .data)
-        user = try container.decode(User.self, forKey: .data)
+        status = try container.decode(Int.self, forKey: .status)
+        message = try container.decode(String.self, forKey: .message)
+        data = try container.decode(User.self, forKey: .data)
+        
     }
 }
