@@ -37,6 +37,8 @@
 		B1C86C69285C7201002B28C5 /* CheckVerificationValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C68285C7201002B28C5 /* CheckVerificationValidationResponse.swift */; };
 		B1C86C6C285C7483002B28C5 /* APIClient.SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */; };
 		B1C86C6E285C7502002B28C5 /* APIClient.SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */; };
+		B1C86C70285C76A7002B28C5 /* CheckPasswordValidationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6F285C76A7002B28C5 /* CheckPasswordValidationRequest.swift */; };
+		B1C86C72285C76B3002B28C5 /* CheckPasswordValidationReqsponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C71285C76B3002B28C5 /* CheckPasswordValidationReqsponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		B1C86C68285C7201002B28C5 /* CheckVerificationValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVerificationValidationResponse.swift; sourceTree = "<group>"; };
 		B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignUp.swift; sourceTree = "<group>"; };
 		B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignIn.swift; sourceTree = "<group>"; };
+		B1C86C6F285C76A7002B28C5 /* CheckPasswordValidationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordValidationRequest.swift; sourceTree = "<group>"; };
+		B1C86C71285C76B3002B28C5 /* CheckPasswordValidationReqsponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordValidationReqsponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,7 @@
 				B1C86C5F285C69AD002B28C5 /* CheckEmailValidation */,
 				B1C86C61285C6FC6002B28C5 /* SendVerificationMail */,
 				B1C86C6A285C7205002B28C5 /* CheckVerificationValidation */,
+				B1C86C73285C76BB002B28C5 /* CheckPasswordValidation */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -265,6 +270,15 @@
 				B1C86C68285C7201002B28C5 /* CheckVerificationValidationResponse.swift */,
 			);
 			path = CheckVerificationValidation;
+			sourceTree = "<group>";
+		};
+		B1C86C73285C76BB002B28C5 /* CheckPasswordValidation */ = {
+			isa = PBXGroup;
+			children = (
+				B1C86C6F285C76A7002B28C5 /* CheckPasswordValidationRequest.swift */,
+				B1C86C71285C76B3002B28C5 /* CheckPasswordValidationReqsponse.swift */,
+			);
+			path = CheckPasswordValidation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,8 +411,10 @@
 				B1412AD1285B383F006ED59E /* APIClient.swift in Sources */,
 				B1C86C5C285C6929002B28C5 /* CheckEmailValidationRequest.swift in Sources */,
 				B1412ADF285B40C3006ED59E /* User.swift in Sources */,
+				B1C86C72285C76B3002B28C5 /* CheckPasswordValidationReqsponse.swift in Sources */,
 				B1C86C6C285C7483002B28C5 /* APIClient.SignUp.swift in Sources */,
 				B1C86C67285C71F3002B28C5 /* CheckVerificationValidationRequest.swift in Sources */,
+				B1C86C70285C76A7002B28C5 /* CheckPasswordValidationRequest.swift in Sources */,
 				B1C86C4E285C4789002B28C5 /* SignInRequest.swift in Sources */,
 				B1C86C6E285C7502002B28C5 /* APIClient.SignIn.swift in Sources */,
 				B1C86C69285C7201002B28C5 /* CheckVerificationValidationResponse.swift in Sources */,

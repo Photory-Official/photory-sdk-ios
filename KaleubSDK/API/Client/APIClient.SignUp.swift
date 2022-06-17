@@ -57,4 +57,16 @@ extension APIClient {
             }
         }
     }
+    //password": "abcde123
+    func checkPasswordValidation(password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = CheckPasswordValidationRequest(password: password)
+        self.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

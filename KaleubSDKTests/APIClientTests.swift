@@ -21,7 +21,7 @@ class APIClientTests: XCTestCase {
 
     // MARK: - SignUp
     
-    func test_sign_up() throws {
+    func test_signUp() throws {
         let email = "heyazoo127@gmail.com"
         let password = "12a3456"
         
@@ -40,7 +40,7 @@ class APIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 120)
     }
     
-    func test_signup_email_check() {
+    func test_checkEmailValidation() {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
@@ -56,12 +56,71 @@ class APIClientTests: XCTestCase {
         }
 
         wait(for: [expectation], timeout: 120)
-        
     }
+    
+    func test_sendVerificationMail() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+        
+        client.sendVerificationMail(to: "heyazoo1007@gmail.com") { result in
+            switch result {
+            case .success(let response):
+                XCTAssert(response != nil)
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 120)
+    }
+    
+    func test_checkVerificationValidation() {
+        let email: String = "heyazoo1007@gmail.com"
+        let authKey: String = "643763"
+        
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+        
+        client.checkVerificationValidation(email: email, authKey: authKey) { result in
+            switch result {
+            case .success(let response):
+                XCTAssert(response != nil)
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 120)
+    }
+    
+    func test_checkPasswordValidation() {
+        let password: String = "abcde123"
+        
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+        
+        client.checkPasswordValidation(password: password) { result in
+            switch result {
+            case .success(let response):
+                XCTAssert(response != nil)
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 120)
+    }
+    
     
     // MARK: - SignIn
     
-    func test_signin() throws {
+    func test_signIn() throws {
         let email = "heyazoo1007@gmail.com"
         let password = "1234a56"
         
@@ -85,7 +144,7 @@ class APIClientTests: XCTestCase {
     
     
     
-    func test_signin_token() throws {
+    func test_signIn_token() throws {
         let request = SignInTokenRequest()
 
         let expectation = XCTestExpectation()
