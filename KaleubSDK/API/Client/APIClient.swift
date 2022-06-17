@@ -113,6 +113,17 @@ class APIClient: ObservableObject {
         }
     }
     
+    func sendVerificationMail(to email: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = SendVerificationMailRequest(email: email)
+        self.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     // MARK: - signIn
     

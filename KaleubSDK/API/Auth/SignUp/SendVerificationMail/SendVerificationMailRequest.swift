@@ -10,7 +10,6 @@ import Foundation
 struct SendVerificationMailRequest: Request, Respondable {
     typealias ResponseType = SendVerificationMailResponse
     let email: String
-    let password: String
     
     let method: APIClient.Method = .post
     
