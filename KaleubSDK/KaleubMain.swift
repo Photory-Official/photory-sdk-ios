@@ -50,6 +50,7 @@ class KaleubMain {
             switch result {
             case .success(let response):
                 print(response)
+                UserDefaults.standard.set(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
             case .failure(let error):
                 print(error.localizedDescription)
             }
