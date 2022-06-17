@@ -12,7 +12,7 @@ struct SignInResponse: Response, Decodable {
     
     let status: Int
     let message: String
-    let data: User
+    let data: User?
     
     enum CodingKeys: String, CodingKey {
         case status
@@ -30,7 +30,7 @@ struct SignInResponse: Response, Decodable {
 //        let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.DataKeys.self, forKey: .data)
         status = try container.decode(Int.self, forKey: .status)
         message = try container.decode(String.self, forKey: .message)
-        data = try container.decode(User.self, forKey: .data)
+        data = try? container.decode(User.self, forKey: .data)
         
     }
 }

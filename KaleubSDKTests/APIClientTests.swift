@@ -27,7 +27,7 @@ class APIClientTestsSignUp: XCTestCase {
     
     func test_signUp() throws {
         // statusCode: 200 - KaleubSDK.APIClient.APIError 오류 4. 디코딩 에러
-        let email = "heyaazoa07@gmail.com"
+        let email = "heyaazoa07a@gmail.com"
         let password = "12a3456"
         
         let expectation = XCTestExpectation()
@@ -36,7 +36,7 @@ class APIClientTestsSignUp: XCTestCase {
         apiClient?.signUp(email: email, password: password) { result in
             switch result {
             case .success(let response):
-                XCTAssert(response == nil)
+                XCTAssert(true)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
@@ -53,7 +53,7 @@ class APIClientTestsSignUp: XCTestCase {
         apiClient?.checkEmailValidation(email: "heyaeosn13@gmail.com") { result in
             switch result {
             case .success(let response):
-                XCTAssert(response != nil)
+                XCTAssert(true)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
 
@@ -72,7 +72,7 @@ class APIClientTestsSignUp: XCTestCase {
         apiClient?.sendVerificationMail(to: "heya7@gmail.com") { result in
             switch result {
             case .success(let response):
-                XCTAssert(response != nil)
+                XCTAssert(true)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
 
@@ -93,7 +93,7 @@ class APIClientTestsSignUp: XCTestCase {
         apiClient?.checkVerificationValidation(email: email, authKey: authKey) { result in
             switch result {
             case .success(let response):
-                XCTAssert(response != nil)
+                XCTAssert(true)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
 
@@ -113,7 +113,7 @@ class APIClientTestsSignUp: XCTestCase {
         apiClient?.checkPasswordValidation(password: password) { result in
             switch result {
             case .success(let response):
-                XCTAssert(response != nil)
+                XCTAssert(true)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
 
@@ -137,7 +137,7 @@ class APIClientTestsSignUp: XCTestCase {
         apiClient?.signIn(email: email, password: password) { result in
             switch result {
             case .success(let response):
-                XCTAssert(response != nil)
+                XCTAssert(true)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
 
@@ -159,7 +159,7 @@ class APIClientTestsSignUp: XCTestCase {
         apiClient?.signIn { result in
             switch result {
             case .success(let response):
-                XCTAssert(response != nil)
+                XCTAssert(true)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
 
