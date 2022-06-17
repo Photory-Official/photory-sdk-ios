@@ -60,6 +60,7 @@ class APIClient: ObservableObject {
         )
         print(urlRequest)
         
+        // NOTE: - 포스트맨으로 서버에 urlRqeust를 했는데 답이 오지 않습니다. 서버가 열리고 다시 확인이 필요합니다.
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             
             if let error = error {
