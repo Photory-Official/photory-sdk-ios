@@ -8,5 +8,7 @@
 import Foundation
 
 class StringSet {
+    static let baseString = "com.kaleub.sdk"
     
+    static let userToken = "\(baseString).user.token"
 }

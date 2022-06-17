@@ -9,5 +9,6 @@ import Foundation
 import SwiftUI
 
 class AppStorageManager {
-    
+    @AppStorage(StringSet.userToken)
+    var userToken: String?
 }
