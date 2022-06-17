@@ -12,17 +12,22 @@ class APIClientTestsSignUp: XCTestCase {
     var apiClient: APIClient?
     
     override func setUp() {
+        super.setUp()
+        
         apiClient = APIClient()
     }
 
     override func tearDown() {
-        apiClient = APIClient()
+        super.tearDown()
+        
+        apiClient = nil
     }
 
     // MARK: - SignUp
     
     func test_signUp() throws {
-        let email = "heyazoa07@gmail.com"
+        // statusCode: 200 - KaleubSDK.APIClient.APIError 오류 4. 디코딩 에러
+        let email = "heyaazoa07@gmail.com"
         let password = "12a3456"
         
         let expectation = XCTestExpectation()
@@ -41,10 +46,11 @@ class APIClientTestsSignUp: XCTestCase {
     }
     
     func test_checkEmailValidation() {
+        // statusCode: 200 - KaleubSDK.APIClient.APIError 오류 4. 디코딩 에러
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        apiClient?.checkEmailValidation(email: "heyazoo1007@gmail.com") { result in
+        apiClient?.checkEmailValidation(email: "heyaeosn13@gmail.com") { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -59,10 +65,11 @@ class APIClientTestsSignUp: XCTestCase {
     }
     
     func test_sendVerificationMail() {
+        // statusCode: 200 - KaleubSDK.APIClient.APIError 오류 4. 디코딩 에러
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        apiClient?.sendVerificationMail(to: "heyazoo1007@gmail.com") { result in
+        apiClient?.sendVerificationMail(to: "heya7@gmail.com") { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
