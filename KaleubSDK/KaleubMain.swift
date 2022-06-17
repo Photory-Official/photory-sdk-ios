@@ -40,22 +40,17 @@ class KaleubMain {
     
     // MARK: - Sign in
     func signIn(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        
-        let request = SignInRequest(email: email, password: password)
-        apiClient.send(request) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-                UserDefaults.standard.set(response.user.token, forKey: StringSet.userToken)
-            case .failure(let error):
-                print(error.localizedDescription)
+        apiClient.signIn(email: email, password: password) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
             }
         }
     }
     
     // TODO: 로그인 유지는 어떻게? 토큰?
-    func signIn(token: String) {
-        
+    func signIn() {
+        // 앱 로컬 기기에서 불러오기 때문에 파라미터가 필요 없습니다.
+        // 함수명은 signInToken으로 변경하는 건 어떨까요?
     }
     
     // MARK: - Room

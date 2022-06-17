@@ -87,6 +87,8 @@ class APIClient: ObservableObject {
         .resume()
     }
     
+    // MARK: - signUp
+    
     func signUp(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let request = SignUpRequest(email: email, password: password)
         self.send(request) { result in
@@ -99,12 +101,29 @@ class APIClient: ObservableObject {
         }
     }
     
-    func sendFeedback(_ feedback: Feedback, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        let request = FeedbackRequest(feedback: feedback)
-        guard apiKey != nil else {
-            resultHandler(.success(()))
-            return
+    // MARK: - signIn
+    
+    func signIn(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = SignInRequest(email: email, password: password)
+        self.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
-        self.send(request, resultHandler: resultHandler)
+    }
+    
+    func signIn(resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = SignInTokenRequest()
+        self.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
