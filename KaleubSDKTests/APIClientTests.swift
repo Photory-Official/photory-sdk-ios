@@ -23,13 +23,12 @@ class APIClientTests: XCTestCase {
     func test_sign_up() throws {
         let client = APIClient()
         // request object
-        let request = SignUpRequest(email: "1", password: "123456")
+        let request = SignUpRequest(email: "heya@gmail.com", password: "12A3456")
         client.send(request) { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
             case .failure(let error):
-                print("실패")
                 XCTFail(error.localizedDescription)
             }
         }

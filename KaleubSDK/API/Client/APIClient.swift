@@ -9,7 +9,7 @@ import Combine
 
 class APIClient: ObservableObject {
     static let urlString: String = {
-        return "http://13.124.230.72:8080"
+        return "http://3.36.58.113:8080"
     }()
 
     enum Method {
@@ -47,20 +47,18 @@ class APIClient: ObservableObject {
     }
 
     func send<RequestType: Request & Respondable>(_ request: RequestType, resultHandler: @escaping (Result<RequestType.ResponseType, Error>) -> Void) {
-        print("A")
+        
         guard var urlRequest = request.urlRequst(baseURL: baseURL) else {
             resultHandler(.failure(APIError.invalidURLRequest))
-            print("B")
             return
         }
-        print("C")
         urlRequest.addValue(
             "application/json",
             forHTTPHeaderField: "Content-Type"
         )
-        print(urlRequest)
         
-        // NOTE: - 포스트맨으로 서버에 urlRqeust를 했는데 답이 오지 않습니다. 서버가 열리고 다시 확인이 필요합니다.
+        print(urlRequest)
+        // NOTE: - urlRequest가 포스트맨에서 올바른데, dataTask쪽으로 코드가 들어가지 않습니다.
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             
             if let error = error {
