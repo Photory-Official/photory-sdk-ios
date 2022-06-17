@@ -10,7 +10,7 @@ import XCTest
 
 class APIClientTests: XCTestCase {
 
-    var client = APIClient()
+    let client = APIClient()
     
     override func setUp() {
         
@@ -21,13 +21,12 @@ class APIClientTests: XCTestCase {
     }
 
     func test_sign_up() throws {
-        let client = APIClient()
-        // request object
+        let request = SignUpRequest(email: "heyazoo127@gmail.com", password: "12a3456")
+        
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        let request = SignUpRequest(email: "heyazoo127@gmail.com", password: "12a3456")
-        client.send(request) { result in 
+        client.send(request) { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -41,5 +40,24 @@ class APIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 120)
     }
     
-    // orijoon98@gmail.com - 123456
+    func test_sign_in() throws {
+        let request = SignInRequest(email: "heyazoo1007@gmail.com", password: "1234a56")
+        
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+        
+        client.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response.user.token)
+                XCTAssert(response != nil)
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+                
+            }
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 120)
+    }
 }

@@ -43,8 +43,17 @@ class KaleubMain {
     }
     
     // MARK: - Sign in
-    func signIn(email: String, password: String) {
+    func signIn(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         
+        let request = SignInRequest(email: email, password: password)
+        apiClient.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     // TODO: 로그인 유지는 어떻게? 토큰?
