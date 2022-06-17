@@ -17,7 +17,6 @@ struct SignUpResponse: Response, Decodable {
     }
     
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.DataKeys.self, forKey: .data)
+        _ = try decoder.container(keyedBy: CodingKeys.self)
     }
 }

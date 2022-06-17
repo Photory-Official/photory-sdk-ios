@@ -25,16 +25,12 @@ class APIClientTests: XCTestCase {
         // request object
         let request = SignUpRequest(email: "1", password: "123456")
         client.send(request) { result in
-            print(result)
             switch result {
             case .success(let response):
-                print("통과")
-                XCTAssert(response == nil)
-                XCTAssert(false)
+                XCTAssert(response != nil)
             case .failure(let error):
                 print("실패")
-//                XCTFail(error.localizedDescription)
-                XCTAssert(false)
+                XCTFail(error.localizedDescription)
             }
         }
     }
