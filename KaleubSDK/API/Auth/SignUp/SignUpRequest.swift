@@ -26,6 +26,7 @@ struct SignUpRequest: Request, Respondable {
         let object = ["email": email, "password": password]
         let data = try? JSONSerialization.data(withJSONObject: object, options: [])
         urlRequest.httpBody = data
+        
         return urlRequest
     }
 }

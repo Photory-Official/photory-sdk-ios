@@ -22,7 +22,7 @@ class APIClientTestsSignUp: XCTestCase {
     // MARK: - SignUp
     
     func test_signUp() throws {
-        let email = "heyazoo12007@gmail.com"
+        let email = "heyazoa07@gmail.com"
         let password = "12a3456"
         
         let expectation = XCTestExpectation()
