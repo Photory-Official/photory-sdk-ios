@@ -29,6 +29,8 @@
 		B1C86C55285C5153002B28C5 /* AppStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C54285C5153002B28C5 /* AppStorageManager.swift */; };
 		B1C86C58285C51B6002B28C5 /* StringSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C57285C51B6002B28C5 /* StringSet.swift */; };
 		B1C86C5A285C5A72002B28C5 /* SignInTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C59285C5A72002B28C5 /* SignInTokenRequest.swift */; };
+		B1C86C5C285C6929002B28C5 /* SignUpEmailCheckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C5B285C6929002B28C5 /* SignUpEmailCheckRequest.swift */; };
+		B1C86C5E285C6944002B28C5 /* SignUpEmailCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C5D285C6944002B28C5 /* SignUpEmailCheckResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		B1C86C54285C5153002B28C5 /* AppStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageManager.swift; sourceTree = "<group>"; };
 		B1C86C57285C51B6002B28C5 /* StringSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSet.swift; sourceTree = "<group>"; };
 		B1C86C59285C5A72002B28C5 /* SignInTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTokenRequest.swift; sourceTree = "<group>"; };
+		B1C86C5B285C6929002B28C5 /* SignUpEmailCheckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailCheckRequest.swift; sourceTree = "<group>"; };
+		B1C86C5D285C6944002B28C5 /* SignUpEmailCheckResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailCheckResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 			children = (
 				B1412AD6285B38A3006ED59E /* SignUpRequest.swift */,
 				B1412AD4285B3892006ED59E /* SignUpResonse.swift */,
+				B1C86C5F285C69AD002B28C5 /* EmailCheck */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -217,6 +222,15 @@
 				B1C86C57285C51B6002B28C5 /* StringSet.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B1C86C5F285C69AD002B28C5 /* EmailCheck */ = {
+			isa = PBXGroup;
+			children = (
+				B1C86C5B285C6929002B28C5 /* SignUpEmailCheckRequest.swift */,
+				B1C86C5D285C6944002B28C5 /* SignUpEmailCheckResponse.swift */,
+			);
+			path = EmailCheck;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +350,7 @@
 				B1C86C5A285C5A72002B28C5 /* SignInTokenRequest.swift in Sources */,
 				B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */,
 				B1C86C58285C51B6002B28C5 /* StringSet.swift in Sources */,
+				B1C86C5E285C6944002B28C5 /* SignUpEmailCheckResponse.swift in Sources */,
 				A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */,
 				A9F0AB71285B2CFC001171F1 /* KaleubMain.swift in Sources */,
 				B1412ADC285B38D3006ED59E /* Response.swift in Sources */,
@@ -344,6 +359,7 @@
 				A9F0AB6F285B2CBA001171F1 /* Kaleub.swift in Sources */,
 				B1412ADA285B38C2006ED59E /* Request.swift in Sources */,
 				B1412AD1285B383F006ED59E /* APIClient.swift in Sources */,
+				B1C86C5C285C6929002B28C5 /* SignUpEmailCheckRequest.swift in Sources */,
 				B1412ADF285B40C3006ED59E /* User.swift in Sources */,
 				B1C86C4E285C4789002B28C5 /* SignInRequest.swift in Sources */,
 			);

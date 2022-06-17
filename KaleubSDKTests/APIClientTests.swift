@@ -9,6 +9,7 @@ import XCTest
 @testable import KaleubSDK
 
 class APIClientTests: XCTestCase {
+    let client = APIClient()
     
     override func setUp() {
         
@@ -18,14 +19,16 @@ class APIClientTests: XCTestCase {
         
     }
 
+    // MARK: - SignUp
+    
     func test_sign_up() throws {
-        let request = SignUpRequest(email: "heyazoo127@gmail.com", password: "12a3456")
-
+        let email = "heyazoo127@gmail.com"
+        let password = "12a3456"
+        
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        let client = APIClient()
-        client.send(request) { result in
+        client.signUp(email: email, password: password) { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -37,14 +40,36 @@ class APIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 120)
     }
     
-    func test_sign_in() throws {
-        let request = SignInRequest(email: "heyazoo1007@gmail.com", password: "1234a56")
+    func test_signup_email_check() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+        
+        client.checkEmailValidation(email: "heyazoo1007@gmail.com") { result in
+            switch result {
+            case .success(let response):
+                XCTAssert(response != nil)
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
 
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 120)
+        
+    }
+    
+    // MARK: - SignIn
+    
+    func test_signin() throws {
+        let email = "heyazoo1007@gmail.com"
+        let password = "1234a56"
+        
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
 
         let client = APIClient()
-        client.send(request) { result in
+        client.signIn(email: email, password: password) { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -58,14 +83,16 @@ class APIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 120)
     }
     
-    func test_sign_in_token() throws {
+    
+    
+    func test_signin_token() throws {
         let request = SignInTokenRequest()
 
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
 
         let client = APIClient()
-        client.send(request) { result in
+        client.signIn { result in
             switch result {
             case .success(let response):
                 XCTAssert(response != nil)
@@ -78,4 +105,5 @@ class APIClientTests: XCTestCase {
 
         wait(for: [expectation], timeout: 120)
     }
+    
 }

@@ -9,7 +9,7 @@ import Combine
 
 class APIClient: ObservableObject {
     static let urlString: String = {
-        return "http://3.36.58.113:8080"
+        return "http://13.125.253.133:8080"
     }()
 
     enum Method {
@@ -100,6 +100,19 @@ class APIClient: ObservableObject {
             }
         }
     }
+    
+    func checkEmailValidation(email: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = SignUpEmailCheckRequest(email: email)
+        self.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     
     // MARK: - signIn
     
