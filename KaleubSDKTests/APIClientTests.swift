@@ -8,7 +8,7 @@
 import XCTest
 @testable import KaleubSDK
 
-class APIClientTests: XCTestCase {
+class APIClientTestsSignUp: XCTestCase {
     let client = APIClient()
     
     override func setUp() {
