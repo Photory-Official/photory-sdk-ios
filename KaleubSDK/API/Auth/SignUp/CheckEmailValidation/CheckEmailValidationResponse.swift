@@ -10,6 +10,10 @@ import Foundation
 struct CheckEmailValidationResponse: Response, Decodable {
     typealias RequestType = CheckEmailValidationRequest
     
+    let status: Int
+    let message: String
+    let data: String?
+    
     enum CodingKeys: String, CodingKey {
         case status
         case message
@@ -17,6 +21,9 @@ struct CheckEmailValidationResponse: Response, Decodable {
     }
     
     init(from decoder: Decoder) throws {
-        _ = try decoder.container(keyedBy: CodingKeys.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        status = try container.decode(Int.self, forKey: .status)
+        message = try container.decode(String.self, forKey: .message)
+        data = try container.decode(String.self, forKey: .data)
     }
 }
