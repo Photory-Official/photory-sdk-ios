@@ -8,25 +8,16 @@
 import Foundation
 
 struct SignUpResponse: Response, Decodable {
-    let token: User
-    
     typealias RequestType = SignUpRequest
     
     enum CodingKeys: String, CodingKey {
         case status
         case message
         case data
-        
-        enum DataKeys: String, CodingKey {
-            case id
-            case code
-        }
-        
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let nestedContainer = container.nestedContainer(keyedBy: CodingKeys.DataKeys.self, forKey: .data)
-        id = nestedContainer.decode(Int.self, forKey: .id)
+//        let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.DataKeys.self, forKey: .data)
     }
 }

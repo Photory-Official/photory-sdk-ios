@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Room {
+public class Room: Codable {
     public var code: Int
     public var ownerEmail: String
     public var title: String
@@ -16,9 +16,23 @@ public class Room {
     public var createdDate: String
     public var modifiedDate: String
     
-    init(code: String,
-    
-    )
+    init(
+        code: Int,
+        ownerEmail: String,
+        title: String,
+        password: String,
+        participantsCount: Int,
+        createdDate: String,
+        modifiedDate: String
+    ) {
+        self.code = code
+        self.ownerEmail = ownerEmail
+        self.title = title
+        self.password = password
+        self.participantsCount = participantsCount
+        self.createdDate = createdDate
+        self.modifiedDate = modifiedDate
+    }
     
 //    let apiClient
     public enum Role {

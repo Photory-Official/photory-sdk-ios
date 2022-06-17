@@ -34,6 +34,6 @@ struct RoomListResponse: Response, Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.DataKeys.self, forKey: .data)
 //        id = nestedContainer.decode(Int.self, forKey: .id)
-        rooms.code = nestedContainer.decode(String.self, forKey: .code)
+        rooms = try container.decode([Room].self, forKey: .data)
     }
 }

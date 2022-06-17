@@ -35,7 +35,7 @@ class KaleubMain {
         apiClient.send(request) { result in
             switch result {
             case .success(let response):
-                print(response.token)
+                print(response)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -54,7 +54,7 @@ class KaleubMain {
     
     // MARK: - Room
     func createRoom(with params: Room.Params) {
-        roomManager.createRoom(with: params)
+//        roomManager.createRoom(with: params)
     }
     
     func enterRoom(id: String) {

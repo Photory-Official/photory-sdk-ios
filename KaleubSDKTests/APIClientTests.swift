@@ -10,25 +10,34 @@ import XCTest
 
 class APIClientTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var client = APIClient()
+    
+    override func setUp() {
+        
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        
     }
 
-    func testExample() throws {
+    func test_sign_up() throws {
         let client = APIClient()
         // request object
         let request = SignUpRequest(email: "1", password: "123456")
         client.send(request) { result in
+            print(result)
             switch result {
             case .success(let response):
-                XCTAssert(response.token != nil)
+                print("통과")
+                XCTAssert(response == nil)
+                XCTAssert(false)
             case .failure(let error):
-                XCTFail(error.localizedDescription)
+                print("실패")
+//                XCTFail(error.localizedDescription)
+                XCTAssert(false)
             }
         }
     }
+    
+    // orijoon98@gmail.com - 123456
 }

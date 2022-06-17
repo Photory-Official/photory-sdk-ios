@@ -47,16 +47,21 @@ class APIClient: ObservableObject {
     }
 
     func send<RequestType: Request & Respondable>(_ request: RequestType, resultHandler: @escaping (Result<RequestType.ResponseType, Error>) -> Void) {
-        
+        print("A")
         guard var urlRequest = request.urlRequst(baseURL: baseURL) else {
             resultHandler(.failure(APIError.invalidURLRequest))
+            print("B")
             return
         }
+        print("C")
         urlRequest.addValue(
             "application/json",
             forHTTPHeaderField: "Content-Type"
         )
+        print(urlRequest)
+        
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            
             if let error = error {
                 resultHandler(.failure(error))
                 return
