@@ -8,7 +8,7 @@
 import Foundation
 
 struct CheckEmailValidationRequest: Request, Respondable {
-    typealias ResponseType = checkEmailValidationResponse
+    typealias ResponseType = CheckEmailValidationResponse
     let email: String
     
     let method: APIClient.Method = .post

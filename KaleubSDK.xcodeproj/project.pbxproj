@@ -30,7 +30,9 @@
 		B1C86C58285C51B6002B28C5 /* StringSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C57285C51B6002B28C5 /* StringSet.swift */; };
 		B1C86C5A285C5A72002B28C5 /* SignInTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C59285C5A72002B28C5 /* SignInTokenRequest.swift */; };
 		B1C86C5C285C6929002B28C5 /* CheckEmailValidationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C5B285C6929002B28C5 /* CheckEmailValidationRequest.swift */; };
-		B1C86C5E285C6944002B28C5 /* checkEmailValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C5D285C6944002B28C5 /* checkEmailValidationResponse.swift */; };
+		B1C86C5E285C6944002B28C5 /* CheckEmailValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C5D285C6944002B28C5 /* CheckEmailValidationResponse.swift */; };
+		B1C86C63285C6FDD002B28C5 /* SendVerificationMailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C62285C6FDD002B28C5 /* SendVerificationMailRequest.swift */; };
+		B1C86C65285C6FE7002B28C5 /* SendVerificationMailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C64285C6FE7002B28C5 /* SendVerificationMailResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +70,9 @@
 		B1C86C57285C51B6002B28C5 /* StringSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSet.swift; sourceTree = "<group>"; };
 		B1C86C59285C5A72002B28C5 /* SignInTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTokenRequest.swift; sourceTree = "<group>"; };
 		B1C86C5B285C6929002B28C5 /* CheckEmailValidationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailValidationRequest.swift; sourceTree = "<group>"; };
-		B1C86C5D285C6944002B28C5 /* checkEmailValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkEmailValidationResponse.swift; sourceTree = "<group>"; };
+		B1C86C5D285C6944002B28C5 /* CheckEmailValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailValidationResponse.swift; sourceTree = "<group>"; };
+		B1C86C62285C6FDD002B28C5 /* SendVerificationMailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendVerificationMailRequest.swift; sourceTree = "<group>"; };
+		B1C86C64285C6FE7002B28C5 /* SendVerificationMailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendVerificationMailResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +205,8 @@
 			children = (
 				B1412AD6285B38A3006ED59E /* SignUpRequest.swift */,
 				B1412AD4285B3892006ED59E /* SignUpResonse.swift */,
-				B1C86C5F285C69AD002B28C5 /* EmailCheck */,
+				B1C86C5F285C69AD002B28C5 /* CheckEmailValidation */,
+				B1C86C61285C6FC6002B28C5 /* SendVerificationMail */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -224,13 +229,22 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		B1C86C5F285C69AD002B28C5 /* EmailCheck */ = {
+		B1C86C5F285C69AD002B28C5 /* CheckEmailValidation */ = {
 			isa = PBXGroup;
 			children = (
 				B1C86C5B285C6929002B28C5 /* CheckEmailValidationRequest.swift */,
-				B1C86C5D285C6944002B28C5 /* checkEmailValidationResponse.swift */,
+				B1C86C5D285C6944002B28C5 /* CheckEmailValidationResponse.swift */,
 			);
-			path = EmailCheck;
+			path = CheckEmailValidation;
+			sourceTree = "<group>";
+		};
+		B1C86C61285C6FC6002B28C5 /* SendVerificationMail */ = {
+			isa = PBXGroup;
+			children = (
+				B1C86C62285C6FDD002B28C5 /* SendVerificationMailRequest.swift */,
+				B1C86C64285C6FE7002B28C5 /* SendVerificationMailResponse.swift */,
+			);
+			path = SendVerificationMail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,15 +356,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C86C65285C6FE7002B28C5 /* SendVerificationMailResponse.swift in Sources */,
 				B1412AE4285B4ABB006ED59E /* RoomListResponse.swift in Sources */,
 				A9F0AB56285B22B0001171F1 /* KaleubSDK.docc in Sources */,
 				B1412AD5285B3892006ED59E /* SignUpResonse.swift in Sources */,
 				B1C86C55285C5153002B28C5 /* AppStorageManager.swift in Sources */,
 				B1C86C51285C47A1002B28C5 /* SignInResponse.swift in Sources */,
+				B1C86C63285C6FDD002B28C5 /* SendVerificationMailRequest.swift in Sources */,
 				B1C86C5A285C5A72002B28C5 /* SignInTokenRequest.swift in Sources */,
 				B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */,
 				B1C86C58285C51B6002B28C5 /* StringSet.swift in Sources */,
-				B1C86C5E285C6944002B28C5 /* checkEmailValidationResponse.swift in Sources */,
+				B1C86C5E285C6944002B28C5 /* CheckEmailValidationResponse.swift in Sources */,
 				A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */,
 				A9F0AB71285B2CFC001171F1 /* KaleubMain.swift in Sources */,
 				B1412ADC285B38D3006ED59E /* Response.swift in Sources */,

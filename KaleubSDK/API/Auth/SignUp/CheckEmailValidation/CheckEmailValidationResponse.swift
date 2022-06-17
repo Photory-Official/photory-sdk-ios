@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct checkEmailValidationResponse: Response, Decodable {
+struct CheckEmailValidationResponse: Response, Decodable {
     typealias RequestType = CheckEmailValidationRequest
     
     enum CodingKeys: String, CodingKey {
