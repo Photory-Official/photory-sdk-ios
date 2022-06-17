@@ -24,6 +24,8 @@
 		B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AE1285B4A91006ED59E /* RoomListRequest.swift */; };
 		B1412AE4285B4ABB006ED59E /* RoomListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AE3285B4ABB006ED59E /* RoomListResponse.swift */; };
 		B1412AE6285B4D8B006ED59E /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AE5285B4D8B006ED59E /* APIClientTests.swift */; };
+		B1C86C4E285C4789002B28C5 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C4D285C4789002B28C5 /* SignInRequest.swift */; };
+		B1C86C51285C47A1002B28C5 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C50285C47A1002B28C5 /* SignInResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B1412AE1285B4A91006ED59E /* RoomListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListRequest.swift; sourceTree = "<group>"; };
 		B1412AE3285B4ABB006ED59E /* RoomListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListResponse.swift; sourceTree = "<group>"; };
 		B1412AE5285B4D8B006ED59E /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		B1C86C4D285C4789002B28C5 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		B1C86C50285C47A1002B28C5 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +151,8 @@
 		B1412AD3285B387E006ED59E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				B1412AD6285B38A3006ED59E /* SignUpRequest.swift */,
-				B1412AD4285B3892006ED59E /* SignUpResonse.swift */,
+				B1C86C4F285C4791002B28C5 /* SignUp */,
+				B1C86C52285C47A6002B28C5 /* SignIn */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -178,6 +182,24 @@
 				B1412AE3285B4ABB006ED59E /* RoomListResponse.swift */,
 			);
 			path = Room;
+			sourceTree = "<group>";
+		};
+		B1C86C4F285C4791002B28C5 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				B1412AD6285B38A3006ED59E /* SignUpRequest.swift */,
+				B1412AD4285B3892006ED59E /* SignUpResonse.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		B1C86C52285C47A6002B28C5 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B1C86C4D285C4789002B28C5 /* SignInRequest.swift */,
+				B1C86C50285C47A1002B28C5 /* SignInResponse.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +314,7 @@
 				B1412AE4285B4ABB006ED59E /* RoomListResponse.swift in Sources */,
 				A9F0AB56285B22B0001171F1 /* KaleubSDK.docc in Sources */,
 				B1412AD5285B3892006ED59E /* SignUpResonse.swift in Sources */,
+				B1C86C51285C47A1002B28C5 /* SignInResponse.swift in Sources */,
 				B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */,
 				A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */,
 				A9F0AB71285B2CFC001171F1 /* KaleubMain.swift in Sources */,
@@ -302,6 +325,7 @@
 				B1412ADA285B38C2006ED59E /* Request.swift in Sources */,
 				B1412AD1285B383F006ED59E /* APIClient.swift in Sources */,
 				B1412ADF285B40C3006ED59E /* User.swift in Sources */,
+				B1C86C4E285C4789002B28C5 /* SignInRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
