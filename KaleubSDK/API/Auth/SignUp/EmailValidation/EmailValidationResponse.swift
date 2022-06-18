@@ -1,5 +1,5 @@
 //
-//  SignUpEmailCheckResponse.swift
+//  EmailValidationResponse.swift
 //  KaleubSDK
 //
 //  Created by Hamlit Jason on 2022/06/17.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CheckEmailValidationResponse: Response, Decodable {
-    typealias RequestType = CheckEmailValidationRequest
+struct EmailValidationResponse: Response, Decodable {
+    typealias RequestType = EmailValidationRequest
     
     let status: Int
     let message: String

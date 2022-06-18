@@ -1,5 +1,5 @@
 //
-//  CheckPasswordValidationReqsponse.swift
+//  AuthKeyValidationResponse.swift
 //  KaleubSDK
 //
 //  Created by Hamlit Jason on 2022/06/17.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CheckPasswordValidationReqsponse: Response, Decodable {
-    typealias RequestType = CheckPasswordValidationRequest
+struct AuthKeyValidationResponse: Response, Decodable {
+    typealias RequestType = AuthKeyValidationRequest
     
     let status: Int
     let message: String
@@ -27,5 +27,4 @@ struct CheckPasswordValidationReqsponse: Response, Decodable {
         data = try? container.decode(String.self, forKey: .data)
     }
 }
-
 

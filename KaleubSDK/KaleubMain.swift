@@ -9,28 +9,48 @@ import Foundation
 
 class KaleubMain {
     let version: String = "1.0.0" // [NEXT_VERSION]
-    let roomManager = RoomManager()
-    let apiClient = APIClient()
+    let roomManager: RoomManager
+    let apiClient: APIClient
+    
+    init() {
+        self.apiClient = APIClient()
+        self.roomManager = RoomManager()
+    }
     
     // MARK: - Sign up
-    func checkEmailValidation(email: String) {
-        
+    func checkEmailValidation(email: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        apiClient.checkEmailValidation(email: email) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
     }
     
-    func checkPasswordValidation(password: String) {
-        
+    func checkPasswordValidation(password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        apiClient.checkPasswordValidation(password: password) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
     }
     
-    func sendVerificationMail(to email: String) {
-        
+    func sendVerificationMail(to email: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        apiClient.sendVerificationMail(to: email) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
     }
     
-    func checkVerificationValidation(value: String) {
-        
+    func checkAuthKeyValidation(email: String, authKey: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        apiClient.checkAuthKeyValidation(email: email, authKey: authKey) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
     }
     
     func signUp(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        // NOTE: 이런 구조를 사용할 예정입니다. 깃헙 공동 작업시 충돌 방지를 위해 기록합니다.
         apiClient.signUp(email: email, password: password) { result in
             DispatchQueue.main.async {
                 resultHandler(result)
@@ -48,7 +68,7 @@ class KaleubMain {
     }
     
     // TODO: 로그인 유지는 어떻게? 토큰?
-    func signIn() {
+    func signIn(with token: String) {
         // 앱 로컬 기기에서 불러오기 때문에 파라미터가 필요 없습니다.
         // 함수명은 signInToken으로 변경하는 건 어떨까요?
     }

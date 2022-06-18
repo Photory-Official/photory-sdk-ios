@@ -10,4 +10,6 @@ import Foundation
 protocol Response: Decodable {
     associatedtype RequestType: Request
     
+    var status: Int { get }
+    var message: String { get }
 }

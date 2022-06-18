@@ -14,22 +14,22 @@ extension APIClient {
         let request = SignUpRequest(email: email, password: password)
         self.send(request) { result in
             switch result {
-            case .success(let response):
-                print(response)
+            case .success:
+                resultHandler(.success(()))
             case .failure(let error):
-                print(error.localizedDescription)
+                resultHandler(.failure(error))
             }
         }
     }
     
     func checkEmailValidation(email: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        let request = CheckEmailValidationRequest(email: email)
+        let request = EmailValidationRequest(email: email)
         self.send(request) { result in
             switch result {
-            case .success(let response):
-                print(response)
+            case .success:
+                resultHandler(.success(()))
             case .failure(let error):
-                print(error.localizedDescription)
+                resultHandler(.failure(error))
             }
         }
     }
@@ -38,34 +38,34 @@ extension APIClient {
         let request = SendVerificationMailRequest(email: email)
         self.send(request) { result in
             switch result {
-            case .success(let response):
-                print(response)
+            case .success:
+                resultHandler(.success(()))
             case .failure(let error):
-                print(error.localizedDescription)
+                resultHandler(.failure(error))
             }
         }
     }
     
-    func checkVerificationValidation(email: String, authKey: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        let request = CheckVerificationValidationRequest(email: email, authKey: authKey)
+    func checkAuthKeyValidation(email: String, authKey: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = AuthKeyValidationRequest(email: email, authKey: authKey)
         self.send(request) { result in
             switch result {
-            case .success(let response):
-                print(response)
+            case .success:
+                resultHandler(.success(()))
             case .failure(let error):
-                print(error.localizedDescription)
+                resultHandler(.failure(error))
             }
         }
     }
     //password": "abcde123
     func checkPasswordValidation(password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        let request = CheckPasswordValidationRequest(password: password)
+        let request = PasswordValidationRequest(password: password)
         self.send(request) { result in
             switch result {
-            case .success(let response):
-                print(response)
+            case .success:
+                resultHandler(.success(()))
             case .failure(let error):
-                print(error.localizedDescription)
+                resultHandler(.failure(error))
             }
         }
     }

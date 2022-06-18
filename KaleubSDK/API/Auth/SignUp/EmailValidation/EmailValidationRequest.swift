@@ -1,5 +1,5 @@
 //
-//  SignUpEmailCheckRequest.swift
+//  EmailValidationRequest.swift
 //  KaleubSDK
 //
 //  Created by Hamlit Jason on 2022/06/17.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CheckEmailValidationRequest: Request, Respondable {
-    typealias ResponseType = CheckEmailValidationResponse
+struct EmailValidationRequest: Request, Respondable {
+    typealias ResponseType = EmailValidationResponse
     let email: String
     
     let method: APIClient.Method = .post
