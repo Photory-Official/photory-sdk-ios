@@ -9,6 +9,7 @@ import Combine
 
 class APIClient: ObservableObject {
     static let urlString: String = {
+        // TODO: DEBUG, PRODUCTION
         return "http://13.125.253.133:8080"
     }()
 
@@ -33,7 +34,16 @@ class APIClient: ObservableObject {
         case noDataFromResponse
         case failedToRequest
         case failedToDecodeResponse
-        case statusCode(_ statusCode: Int)
+        case statusCode(_ statusCode: Int, _ message: String)
+        
+        var localizedDescription: String {
+            switch self {
+            case .statusCode(let statusCode, let message):
+                return (400..<500) ~= statusCode ? message : "네트워크 에러가 발생했습니다."
+            default:
+                return "네트워크 에러가 발생했습니다."
+            }
+        }
     }
 
     let baseURL: URL
@@ -56,13 +66,9 @@ class APIClient: ObservableObject {
             "application/json",
             forHTTPHeaderField: "Content-Type"
         )
+        urlRequest.timeoutInterval = 30
         
-        print(urlRequest)
-        // NOTE: - status 500번대가 내려옵니다 포스트맨에서는 정상적으로 작동 확인했는데 해결이 필요합니다.
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            // NOTE: - 서버가 죽은 경우 컴플리션이 호출되지 않습니다!
-            print(response)
-            
             if let error = error {
                 resultHandler(.failure(error))
                 return
@@ -73,9 +79,17 @@ class APIClient: ObservableObject {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse, (200..<300) ~= response.statusCode else {
+            guard let response = response as? HTTPURLResponse else {
                 resultHandler(.failure(APIError.failedToRequest))
-                
+                return
+            }
+            
+            guard (200..<300) ~= response.statusCode else {
+                if let output = try? JSONDecoder().decode(RequestType.ResponseType.self, from: data) {
+                    resultHandler(.failure(APIError.statusCode(response.statusCode, output.message)))
+                } else {
+                    resultHandler(.failure(APIError.statusCode(response.statusCode, "")))
+                }
                 return
             }
             

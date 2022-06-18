@@ -27,7 +27,7 @@ class APIClientTestsSignUp: XCTestCase {
     
     func test_signUp() throws {
         // statusCode: 200 - KaleubSDK.APIClient.APIError 오류 4. 디코딩 에러
-        let email = "heyaeazoa07a@gmail.com"
+        let email = "heyaeazoa07a1@gmail.com"
         let password = "12a3456"
         
         let expectation = XCTestExpectation()
@@ -35,14 +35,18 @@ class APIClientTestsSignUp: XCTestCase {
         
         apiClient?.signUp(email: email, password: password) { result in
             switch result {
-            case .success(let response):
+            case .success:
                 XCTAssertTrue(true)
             case .failure(let error):
-                XCTFail(error.localizedDescription)
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
             }
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 120)
+        wait(for: [expectation], timeout: 30)
     }
     
     func test_checkEmailValidation() {
@@ -52,16 +56,19 @@ class APIClientTestsSignUp: XCTestCase {
         
         apiClient?.checkEmailValidation(email: "heyaeosn13@gmail.com") { result in
             switch result {
-            case .success(let response):
+            case .success:
                 XCTAssert(true)
             case .failure(let error):
-                XCTFail(error.localizedDescription)
-
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
             }
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 120)
+        wait(for: [expectation], timeout: 30)
     }
     
     func test_sendVerificationMail() {
@@ -71,37 +78,43 @@ class APIClientTestsSignUp: XCTestCase {
         
         apiClient?.sendVerificationMail(to: "heya7@gmail.com") { result in
             switch result {
-            case .success(let response):
+            case .success:
                 XCTAssert(true)
             case .failure(let error):
-                XCTFail(error.localizedDescription)
-
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
             }
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 120)
+        wait(for: [expectation], timeout: 30)
     }
     
-    func test_checkVerificationValidation() {
+    func test_checkAuthKeyValidation() {
         let email: String = "heyazoo1007@gmail.com"
         let authKey: String = "643763"
         
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        apiClient?.checkVerificationValidation(email: email, authKey: authKey) { result in
+        apiClient?.checkAuthKeyValidation(email: email, authKey: authKey) { result in
             switch result {
-            case .success(let response):
+            case .success:
                 XCTAssert(true)
             case .failure(let error):
-                XCTFail(error.localizedDescription)
-
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
             }
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 120)
+        wait(for: [expectation], timeout: 30)
     }
     
     func test_checkPasswordValidation() {
@@ -112,16 +125,19 @@ class APIClientTestsSignUp: XCTestCase {
         
         apiClient?.checkPasswordValidation(password: password) { result in
             switch result {
-            case .success(let response):
+            case .success:
                 XCTAssert(true)
             case .failure(let error):
-                XCTFail(error.localizedDescription)
-
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
             }
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 120)
+        wait(for: [expectation], timeout: 30)
     }
     
     
@@ -136,16 +152,19 @@ class APIClientTestsSignUp: XCTestCase {
 
         apiClient?.signIn(email: email, password: password) { result in
             switch result {
-            case .success(let response):
+            case .success:
                 XCTAssert(true)
             case .failure(let error):
-                XCTFail(error.localizedDescription)
-
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
             }
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 120)
+        wait(for: [expectation], timeout: 30)
     }
     
     
@@ -158,16 +177,19 @@ class APIClientTestsSignUp: XCTestCase {
 
         apiClient?.signIn { result in
             switch result {
-            case .success(let response):
+            case .success:
                 XCTAssert(true)
             case .failure(let error):
-                XCTFail(error.localizedDescription)
-
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
             }
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 120)
+        wait(for: [expectation], timeout: 30)
     }
     
 }

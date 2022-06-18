@@ -8,6 +8,9 @@
 import Foundation
 
 struct RoomListResponse: Response, Decodable {
+    let status: Int
+    let message: String
+    
     let rooms: [Room]
     
     typealias RequestType = RoomListRequest
@@ -32,6 +35,9 @@ struct RoomListResponse: Response, Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        // TODO: 공통은 Response 로 옮기기
+        status = try container.decode(Int.self, forKey: .status)
+        message = try container.decode(String.self, forKey: .message)
 //        let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.DataKeys.self, forKey: .data)
         rooms = try container.decode([Room].self, forKey: .data)
     }
