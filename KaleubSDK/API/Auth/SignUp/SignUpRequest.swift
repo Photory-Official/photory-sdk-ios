@@ -9,11 +9,13 @@ import Foundation
 
 struct SignUpRequest: Request, Respondable {
     typealias ResponseType = SignUpResponse
-    let email: String
-    let password: String
+    
     let method: APIClient.Method = .post
     
     var key: String { "auth/signup" }
+    
+    let email: String
+    let password: String
     
     func urlRequst(baseURL: URL) -> URLRequest? {
         guard let url = URL(string: "\(baseURL)/\(key)") else {

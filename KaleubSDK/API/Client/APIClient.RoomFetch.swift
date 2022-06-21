@@ -13,7 +13,9 @@ extension APIClient {
         self.send(request) { result in
             switch result {
             case .success(let response):
-                resultHandler(.success(response.rooms))
+                let rooms = response.rooms
+                rooms.forEach { $0.apiClient = self }
+                resultHandler(.success(rooms))
             case .failure(let error):
                 resultHandler(.failure(error))
             }

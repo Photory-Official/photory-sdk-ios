@@ -22,7 +22,7 @@ struct RoomListRequest: Request, Respondable {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
         // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer", forHTTPHeaderField: "")
+        urlRequest.addValue("Bearer", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
 }
