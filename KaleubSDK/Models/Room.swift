@@ -23,7 +23,8 @@ public class Room: Codable {
         password: String,
         participantsCount: Int,
         createdDate: String,
-        modifiedDate: String
+        modifiedDate: String,
+        apiClient: APIClient
     ) {
         self.code = code
         self.ownerEmail = ownerEmail

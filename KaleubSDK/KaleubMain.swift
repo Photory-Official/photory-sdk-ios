@@ -73,6 +73,11 @@ class KaleubMain {
         // 함수명은 signInToken으로 변경하는 건 어떨까요?
     }
     
+    // MARK: - Room List
+    func createRoomListQuery(with params: RoomListQuery.Params = .init()) -> RoomListQuery {
+        RoomListQuery(apiClient: apiClient, params: params)
+    }
+    
     // MARK: - Room
     func createRoom(with params: Room.Params) {
 //        roomManager.createRoom(with: params)

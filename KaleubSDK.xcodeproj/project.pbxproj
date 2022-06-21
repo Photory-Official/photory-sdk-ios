@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A9321E01285D842700DE1BB3 /* PasswordValidationReqsponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9321DFF285D842700DE1BB3 /* PasswordValidationReqsponse.swift */; };
 		A9321E02285D842700DE1BB3 /* PasswordValidationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9321E00285D842700DE1BB3 /* PasswordValidationRequest.swift */; };
+		A9321E0828617C5A00DE1BB3 /* RoomListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9321E0728617C5A00DE1BB3 /* RoomListQuery.swift */; };
+		A9321E0A28617E0D00DE1BB3 /* APIClient.RoomFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9321E0928617E0D00DE1BB3 /* APIClient.RoomFetch.swift */; };
+		A9321E0C286180B100DE1BB3 /* RoomListQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9321E0B286180B100DE1BB3 /* RoomListQueryTests.swift */; };
 		A9F0AB56285B22B0001171F1 /* KaleubSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB55285B22B0001171F1 /* KaleubSDK.docc */; };
 		A9F0AB5C285B22B0001171F1 /* KaleubSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F0AB51285B22B0001171F1 /* KaleubSDK.framework */; };
 		A9F0AB61285B22B0001171F1 /* KaleubSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB60285B22B0001171F1 /* KaleubSDKTests.swift */; };
@@ -54,6 +57,9 @@
 /* Begin PBXFileReference section */
 		A9321DFF285D842700DE1BB3 /* PasswordValidationReqsponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordValidationReqsponse.swift; sourceTree = "<group>"; };
 		A9321E00285D842700DE1BB3 /* PasswordValidationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordValidationRequest.swift; sourceTree = "<group>"; };
+		A9321E0728617C5A00DE1BB3 /* RoomListQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListQuery.swift; sourceTree = "<group>"; };
+		A9321E0928617E0D00DE1BB3 /* APIClient.RoomFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.RoomFetch.swift; sourceTree = "<group>"; };
+		A9321E0B286180B100DE1BB3 /* RoomListQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListQueryTests.swift; sourceTree = "<group>"; };
 		A9F0AB51285B22B0001171F1 /* KaleubSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KaleubSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F0AB54285B22B0001171F1 /* KaleubSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KaleubSDK.h; sourceTree = "<group>"; };
 		A9F0AB55285B22B0001171F1 /* KaleubSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = KaleubSDK.docc; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		A9F0AB5F285B22B0001171F1 /* KaleubSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				A9321E0B286180B100DE1BB3 /* RoomListQueryTests.swift */,
 				B1412AE5285B4D8B006ED59E /* APIClientTests.swift */,
 				A9F0AB60285B22B0001171F1 /* KaleubSDKTests.swift */,
 			);
@@ -153,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				A9F0AB74285B32D6001171F1 /* RoomManager.swift */,
+				A9321E0728617C5A00DE1BB3 /* RoomListQuery.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 				B1412AD0285B383F006ED59E /* APIClient.swift */,
 				B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */,
 				B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */,
+				A9321E0928617E0D00DE1BB3 /* APIClient.RoomFetch.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -400,10 +409,12 @@
 				B1C86C51285C47A1002B28C5 /* SignInResponse.swift in Sources */,
 				B1C86C63285C6FDD002B28C5 /* SendVerificationMailRequest.swift in Sources */,
 				B1C86C5A285C5A72002B28C5 /* SignInTokenRequest.swift in Sources */,
+				A9321E0A28617E0D00DE1BB3 /* APIClient.RoomFetch.swift in Sources */,
 				B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */,
 				B1C86C58285C51B6002B28C5 /* StringSet.swift in Sources */,
 				B1C86C5E285C6944002B28C5 /* EmailValidationResponse.swift in Sources */,
 				A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */,
+				A9321E0828617C5A00DE1BB3 /* RoomListQuery.swift in Sources */,
 				A9F0AB71285B2CFC001171F1 /* KaleubMain.swift in Sources */,
 				B1412ADC285B38D3006ED59E /* Response.swift in Sources */,
 				A9F0AB73285B32C4001171F1 /* Room.swift in Sources */,
@@ -427,6 +438,7 @@
 			files = (
 				A9F0AB61285B22B0001171F1 /* KaleubSDKTests.swift in Sources */,
 				B1412AE6285B4D8B006ED59E /* APIClientTests.swift in Sources */,
+				A9321E0C286180B100DE1BB3 /* RoomListQueryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

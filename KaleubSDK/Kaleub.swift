@@ -9,5 +9,4 @@ import Foundation
 
 public class Kaleub {
     static let main = KaleubMain()
-    
 }
