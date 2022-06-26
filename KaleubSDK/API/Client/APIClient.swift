@@ -13,6 +13,8 @@ class APIClient: ObservableObject {
         return "http://13.125.253.133:8080"
     }()
 
+    let version: String = "/v1"
+        
     enum Method {
         case post
         case get
@@ -49,8 +51,8 @@ class APIClient: ObservableObject {
     let baseURL: URL
 
     init(urlString: String = APIClient.urlString) {
-        guard let baseURL = URL(string: urlString) else {
-            fatalError("Failed to create URL from \(urlString)")
+        guard let baseURL = URL(string: urlString + version) else {
+            fatalError("Failed to create URL from \(urlString)\(version)")
         }
 
         self.baseURL = baseURL

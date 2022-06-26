@@ -26,14 +26,6 @@ class KaleubMain {
         }
     }
     
-    func checkPasswordValidation(password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        apiClient.checkPasswordValidation(password: password) { result in
-            DispatchQueue.main.async {
-                resultHandler(result)
-            }
-        }
-    }
-    
     func sendVerificationMail(to email: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         apiClient.sendVerificationMail(to: email) { result in
             DispatchQueue.main.async {
@@ -50,8 +42,8 @@ class KaleubMain {
         }
     }
     
-    func signUp(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        apiClient.signUp(email: email, password: password) { result in
+    func signUp(email: String, password: String, nickname: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        apiClient.signUp(email: email, password: password, nickname: nickname) { result in
             DispatchQueue.main.async {
                 resultHandler(result)
             }
@@ -59,7 +51,7 @@ class KaleubMain {
     }
     
     // MARK: - Sign in
-    func signIn(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+    func signIn(email: String, password: String, resultHandler: @escaping (Result<String, Error>) -> Void) {
         apiClient.signIn(email: email, password: password) { result in
             DispatchQueue.main.async {
                 resultHandler(result)

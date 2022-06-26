@@ -11,26 +11,28 @@ import Foundation
 extension APIClient {
     // MARK: - signIn
     
-    func signIn(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+    func signIn(email: String, password: String, resultHandler: @escaping (Result<String, Error>) -> Void) {
         let request = SignInRequest(email: email, password: password)
         self.send(request) { result in
             switch result {
             case .success(let response):
-                print(response)
+                let token = response.data ?? "token nil"
+                resultHandler(.success(token))
             case .failure(let error):
-                print(error.localizedDescription)
+                resultHandler(.failure(error))
             }
         }
+        
     }
     
     func signIn(resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let request = SignInTokenRequest()
         self.send(request) { result in
             switch result {
-            case .success(let response):
-                print(response)
+            case .success:
+                resultHandler(.success(()))
             case .failure(let error):
-                print(error.localizedDescription)
+                resultHandler(.failure(error))
             }
         }
     }

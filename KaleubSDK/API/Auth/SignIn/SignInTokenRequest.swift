@@ -14,7 +14,7 @@ struct SignInTokenRequest: Request, Respondable {
     
     let method: APIClient.Method = .get
     
-    var key: String { "auth" }
+    var key: String { "auth/check" }
     
     func urlRequst(baseURL: URL) -> URLRequest? {
         guard let url = URL(string: "\(baseURL)/\(key)") else {

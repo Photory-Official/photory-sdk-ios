@@ -10,8 +10,8 @@ import Foundation
 // MARK: - SignUp
 
 extension APIClient {
-    func signUp(email: String, password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        let request = SignUpRequest(email: email, password: password)
+    func signUp(email: String, password: String, nickname: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = SignUpRequest(email: email, password: password, nickname: nickname)
         self.send(request) { result in
             switch result {
             case .success:
@@ -48,18 +48,6 @@ extension APIClient {
     
     func checkAuthKeyValidation(email: String, authKey: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let request = AuthKeyValidationRequest(email: email, authKey: authKey)
-        self.send(request) { result in
-            switch result {
-            case .success:
-                resultHandler(.success(()))
-            case .failure(let error):
-                resultHandler(.failure(error))
-            }
-        }
-    }
-    //password": "abcde123
-    func checkPasswordValidation(password: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        let request = PasswordValidationRequest(password: password)
         self.send(request) { result in
             switch result {
             case .success:

@@ -26,14 +26,14 @@ class APIClientTestsSignUp: XCTestCase {
     // MARK: - SignUp
     
     func test_signUp() throws {
-        // statusCode: 200 - KaleubSDK.APIClient.APIError 오류 4. 디코딩 에러
         let email = "heyaeazoa07a1@gmail.com"
         let password = "12a3456"
+        let nickname = "호나우지뉴!"
         
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        apiClient?.signUp(email: email, password: password) { result in
+        apiClient?.signUp(email: email, password: password, nickname: nickname) { result in
             switch result {
             case .success:
                 XCTAssertTrue(true)
@@ -94,8 +94,8 @@ class APIClientTestsSignUp: XCTestCase {
     }
     
     func test_checkAuthKeyValidation() {
-        let email: String = "heyazoo1007@gmail.com"
-        let authKey: String = "643763"
+        let email: String = "test@gmail.com"
+        let authKey: String = "123456"
         
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
@@ -117,35 +117,11 @@ class APIClientTestsSignUp: XCTestCase {
         wait(for: [expectation], timeout: 30)
     }
     
-    func test_checkPasswordValidation() {
-        let password: String = "abcde123"
-        
-        let expectation = XCTestExpectation()
-        expectation.expectedFulfillmentCount = 1
-        
-        apiClient?.checkPasswordValidation(password: password) { result in
-            switch result {
-            case .success:
-                XCTAssert(true)
-            case .failure(let error):
-                if let error = error as? APIClient.APIError {
-                    XCTFail(error.localizedDescription)
-                } else {
-                    XCTFail(error.localizedDescription)
-                }
-            }
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 30)
-    }
-    
-    
     // MARK: - SignIn
     
     func test_signIn() throws {
-        let email = "heyazoso1007@gmail.com"
-        let password = "1234a56"
+        let email = "heyaeazoa07a1@gmail.com"
+        let password = "12a3456"
         
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
