@@ -10,5 +10,5 @@ import SwiftUI
 
 class AppStorageManager {
     @AppStorage(StringSet.userToken)
-    var userToken: String?
+    static var userToken: String?
 }

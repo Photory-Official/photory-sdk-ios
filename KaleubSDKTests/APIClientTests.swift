@@ -146,6 +146,7 @@ class APIClientTestsSignUp: XCTestCase {
     
     
     func test_signInToken() throws {
+        // eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImhleWFlYXpvYTA3YTFAZ21haWwuY29tIiwiaWF0IjoxNjU2MjY1MzgwLCJleHAiOjE2ODc4MDEzODB9.ANYnuCbt5YRqhthB3_HyGD3K6bMQGyqkqFyY1DPjxmM
         let request = SignInTokenRequest()
 
         let expectation = XCTestExpectation()
