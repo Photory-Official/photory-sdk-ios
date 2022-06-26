@@ -9,7 +9,6 @@ import Foundation
 
 struct SignInTokenRequest: Request, Respondable {
     typealias ResponseType = SignInResponse
-    // NOTE: - KaleubMain과 충돌을 방지하고자 우선 인스턴스를 직접 생성하여 사용합니다. 추후에 변경하세요.
     let userToken = AppStorageManager.userToken ?? ""
     
     let method: APIClient.Method = .get
