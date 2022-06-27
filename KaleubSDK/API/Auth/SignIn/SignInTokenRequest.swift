@@ -25,8 +25,8 @@ struct SignInTokenRequest: Request, Respondable {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
         urlRequest.addValue(
-            userToken,
-            forHTTPHeaderField: "Bearer"
+            "Bearer \(userToken)",
+            forHTTPHeaderField: "Authorization"
         )
         return urlRequest
     }

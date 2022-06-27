@@ -26,7 +26,7 @@ class APIClientTestsSignUp: XCTestCase {
     // MARK: - SignUp
     
     func test_signUp() throws {
-        let email = "heyaeazoa07a1@gmail.com"
+        let email = "heyaeazog07a1@gmail.com"
         let password = "12a3456"
         let nickname = "호나우지뉴!"
         
@@ -147,7 +147,6 @@ class APIClientTestsSignUp: XCTestCase {
     
     func test_signInToken() throws {
         // eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImhleWFlYXpvYTA3YTFAZ21haWwuY29tIiwiaWF0IjoxNjU2MjY1MzgwLCJleHAiOjE2ODc4MDEzODB9.ANYnuCbt5YRqhthB3_HyGD3K6bMQGyqkqFyY1DPjxmM
-        let request = SignInTokenRequest()
 
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
