@@ -9,10 +9,10 @@ import Foundation
 
 class RoomManager {
     var rooms: [String: Room] = [:]
-    
+//    
 //    func createRoom(with params: Room.Params) {
 //        let roomIDFromServer: String = ""
-//        let newRoom = Room()
+//        let newRoom = Room(from: <#Decoder#>)
 //        rooms.updateValue(newRoom, forKey: roomIDFromServer)
 //    }
 }

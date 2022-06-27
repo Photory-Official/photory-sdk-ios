@@ -21,4 +21,22 @@ extension APIClient {
             }
         }
     }
+    
+    func createRoom(title: String, password: String, resultHandler: @escaping (Result<Room, Error>) -> Void) {
+        let request = RoomCreateRequest(title: title, password: password)
+        self.send(request) { result in
+            switch result {
+            case .success:
+                resultHandler(.success(result.))
+            case .failure(let error):
+                resultHandler(.failure(error))
+            }
+        }
+    }
+    
+//    func createRoom(with params: Room.Params) {
+//        let roomIDFromServer: String = ""
+//        let newRoom = Room(from: <#Decoder#>)
+//        rooms.updateValue(newRoom, forKey: roomIDFromServer)
+//    }
 }

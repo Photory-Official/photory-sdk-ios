@@ -60,9 +60,12 @@ class KaleubMain {
     }
     
     // TODO: 로그인 유지는 어떻게? 토큰?
-    func signIn(with token: String) {
-        // 앱 로컬 기기에서 불러오기 때문에 파라미터가 필요 없습니다.
-        // 함수명은 signInToken으로 변경하는 건 어떨까요?
+    func signIn(resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        apiClient.signIn { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
     }
     
     // MARK: - Room List

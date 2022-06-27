@@ -31,8 +31,8 @@ public class Room: Codable {
         case title
         case password
         case participantsCount
-        case createdDate
-        case modifiedDate
+        case createdDate = "createdAt"
+        case modifiedDate = "updatedAt"
     }
     
     var apiClient: APIClient!

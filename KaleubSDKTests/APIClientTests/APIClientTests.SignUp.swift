@@ -1,31 +1,16 @@
 //
-//  APIClientTests.swift
+//  APIClientsTests.SignUp.swift
 //  KaleubSDKTests
 //
-//  Created by Hamlit Jason on 2022/06/16.
+//  Created by Hamlit Jason on 2022/06/28.
 //
 
 import XCTest
 @testable import KaleubSDK
 
-class APIClientTestsSignUp: XCTestCase {
-    var apiClient: APIClient?
-    
-    override func setUp() {
-        super.setUp()
-        
-        apiClient = APIClient()
-    }
-
-    override func tearDown() {
-        super.tearDown()
-        
-        apiClient = nil
-    }
-
-    // MARK: - SignUp
-    
+extension APIClientTests {
     func test_signUp() throws {
+        // TODO: 랜덤 계정 알고리즘 구현
         let email = "heyaeazog07a1@gmail.com"
         let password = "12a3456"
         let nickname = "호나우지뉴!"
@@ -101,57 +86,6 @@ class APIClientTestsSignUp: XCTestCase {
         expectation.expectedFulfillmentCount = 1
         
         apiClient?.checkAuthKeyValidation(email: email, authKey: authKey) { result in
-            switch result {
-            case .success:
-                XCTAssert(true)
-            case .failure(let error):
-                if let error = error as? APIClient.APIError {
-                    XCTFail(error.localizedDescription)
-                } else {
-                    XCTFail(error.localizedDescription)
-                }
-            }
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 30)
-    }
-    
-    // MARK: - SignIn
-    
-    func test_signIn() throws {
-        let email = "heyaeazoa07a1@gmail.com"
-        let password = "12a3456"
-        
-        let expectation = XCTestExpectation()
-        expectation.expectedFulfillmentCount = 1
-
-        apiClient?.signIn(email: email, password: password) { result in
-            switch result {
-            case .success:
-                XCTAssert(true)
-            case .failure(let error):
-                if let error = error as? APIClient.APIError {
-                    XCTFail(error.localizedDescription)
-                } else {
-                    XCTFail(error.localizedDescription)
-                }
-            }
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 30)
-    }
-    
-    
-    
-    func test_signInToken() throws {
-        // eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImhleWFlYXpvYTA3YTFAZ21haWwuY29tIiwiaWF0IjoxNjU2MjY1MzgwLCJleHAiOjE2ODc4MDEzODB9.ANYnuCbt5YRqhthB3_HyGD3K6bMQGyqkqFyY1DPjxmM
-
-        let expectation = XCTestExpectation()
-        expectation.expectedFulfillmentCount = 1
-
-        apiClient?.signIn { result in
             switch result {
             case .success:
                 XCTAssert(true)

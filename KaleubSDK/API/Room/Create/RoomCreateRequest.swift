@@ -9,7 +9,8 @@ import Foundation
 
 struct RoomCreateRequest: Request, Respondable {
     typealias ResponseType = RoomCreateResponse
-
+    let token = AppStorageManager.userToken ?? ""
+    
     let method: APIClient.Method = .post
     
     var key: String { "room" }
@@ -32,7 +33,10 @@ struct RoomCreateRequest: Request, Respondable {
         urlRequest.httpBody = data
         
         // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(
+            "Bearer \(token)",
+            forHTTPHeaderField: "Authorization"
+        )
         return urlRequest
     }
 }
