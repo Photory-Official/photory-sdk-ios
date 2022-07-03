@@ -17,7 +17,7 @@ extension APIClient {
             switch result {
             case .success(let response):
                 let token = response.data ?? "token nil"
-                AppStorageManager.userToken = token
+                AppStorageManager.token = token
                 resultHandler(.success(token))
             case .failure(let error):
                 resultHandler(.failure(error))

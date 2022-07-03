@@ -9,7 +9,7 @@ import Foundation
 
 struct RoomListRequest: Request, Respondable {
     typealias ResponseType = RoomListResponse
-    let userToken = AppStorageManager.userToken ?? ""
+    let userToken = AppStorageManager.token ?? ""
     
     let method: APIClient.Method = .get
     

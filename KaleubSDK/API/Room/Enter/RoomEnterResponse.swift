@@ -11,7 +11,7 @@ struct RoomEnterResponse: Response, Decodable {
     let status: Int
     let message: String
     
-    let rooms: [Room]
+    let room: Room?
     
     typealias RequestType = RoomEnterRequest
     
@@ -25,6 +25,6 @@ struct RoomEnterResponse: Response, Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         status = try container.decode(Int.self, forKey: .status)
         message = try container.decode(String.self, forKey: .message)
-        rooms = try container.decode([Room].self, forKey: .data)
+        room = try? container.decode(Room.self, forKey: .data)
     }
 }

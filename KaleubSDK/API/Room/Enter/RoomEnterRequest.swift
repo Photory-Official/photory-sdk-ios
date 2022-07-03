@@ -12,10 +12,11 @@ struct RoomEnterRequest: Request, Respondable {
 
     let method: APIClient.Method = .post
     
-    var key: String { "room/participant" }
+    var key: String { "room/participate" }
     
     let code: String
     let password: String
+    let token = AppStorageManager.token ?? ""
     
     func urlRequst(baseURL: URL) -> URLRequest? {
         guard let url = URL(string: "\(baseURL)/\(key)") else {
@@ -25,14 +26,13 @@ struct RoomEnterRequest: Request, Respondable {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
         
-        guard let data = try? JSONSerialization.data(withJSONObject: [
-            "code": code,
-            "password": password
-        ]) else { return nil }
+        let object = ["code": code, "password": password]
+        let data = try? JSONSerialization.data(withJSONObject: object, options: [])
+        
         urlRequest.httpBody = data
         
         // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
 }

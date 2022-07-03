@@ -9,7 +9,6 @@ import Foundation
 
 struct RoomCreateRequest: Request, Respondable {
     typealias ResponseType = RoomCreateResponse
-    let token = AppStorageManager.userToken ?? ""
     
     let method: APIClient.Method = .post
     
@@ -17,6 +16,7 @@ struct RoomCreateRequest: Request, Respondable {
     
     let title: String
     let password: String
+    let token = AppStorageManager.token ?? ""
     
     func urlRequst(baseURL: URL) -> URLRequest? {
         guard let url = URL(string: "\(baseURL)/\(key)") else {

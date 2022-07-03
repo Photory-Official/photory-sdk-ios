@@ -9,7 +9,7 @@ import Foundation
 
 struct SignInTokenRequest: Request, Respondable {
     typealias ResponseType = SignInResponse
-    let userToken = AppStorageManager.userToken ?? ""
+    let userToken = AppStorageManager.token ?? ""
     
     let method: APIClient.Method = .get
     
