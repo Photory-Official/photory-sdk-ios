@@ -8,19 +8,6 @@
 import Foundation
 
 extension APIClient {
-    func fetchRoomList(resultHandler: @escaping (Result<[Room], Error>) -> Void) {
-        let request = RoomListRequest()
-        self.send(request) { result in
-            switch result {
-            case .success(let response):
-                let rooms = response.rooms
-                rooms.forEach { $0.apiClient = self }
-                resultHandler(.success(rooms))
-            case .failure(let error):
-                resultHandler(.failure(error))
-            }
-        }
-    }
     
     func createRoom(title: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
         let request = RoomCreateRequest(title: title, password: password)
@@ -42,6 +29,20 @@ extension APIClient {
             case .success(let response):
                 let room = response.room
                 resultHandler(.success(room))
+            case .failure(let error):
+                resultHandler(.failure(error))
+            }
+        }
+    }
+    
+    func fetchRoomList(resultHandler: @escaping (Result<[Room], Error>) -> Void) {
+        let request = RoomListRequest()
+        self.send(request) { result in
+            switch result {
+            case .success(let response):
+                let rooms = response.rooms
+//                rooms.forEach { $0.apiClient = self } 해당 로직 파악 어려워서 주석처리
+                resultHandler(.success(rooms))
             case .failure(let error):
                 resultHandler(.failure(error))
             }

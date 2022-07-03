@@ -54,4 +54,30 @@ extension APIClientTests {
         
         wait(for: [expectation], timeout: 30)
     }
+    
+    func test_fetchRoom() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+        
+        // T1464V01, 123a456
+        apiClient?.fetchRoomList { result in
+            switch result {
+            case .success(let response):
+                response.forEach { room in
+                    print("✅ room \(room.code)")
+                }
+                
+                XCTAssert(true)
+            case .failure(let error):
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
+            }
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 30)
+    }
 }

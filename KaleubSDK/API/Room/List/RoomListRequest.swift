@@ -9,7 +9,7 @@ import Foundation
 
 struct RoomListRequest: Request, Respondable {
     typealias ResponseType = RoomListResponse
-    let userToken = AppStorageManager.token ?? ""
+    let token = AppStorageManager.token ?? ""
     
     let method: APIClient.Method = .get
     
@@ -23,7 +23,7 @@ struct RoomListRequest: Request, Respondable {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
         // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
 }
