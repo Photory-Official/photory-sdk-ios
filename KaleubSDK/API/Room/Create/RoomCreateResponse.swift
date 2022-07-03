@@ -17,12 +17,13 @@ import Foundation
 //    "password": "$2a$10$6AsQCmM2hlFtdE5rXkK.2uDjJV4T6cPObQajjJCXccSzxKZ3LnpZG",
 //    "createdDate": "2022-06-14 19:36:23",
 //    "modifiedDate": "2022-06-14 19:36:23"
+//    "status": true
 //}
 struct RoomCreateResponse: Response, Decodable {
     let status: Int
     let message: String
     
-    let room: Room
+    let room: Room?
     
     typealias RequestType = RoomCreateRequest
     
@@ -36,7 +37,7 @@ struct RoomCreateResponse: Response, Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         status = try container.decode(Int.self, forKey: .status)
         message = try container.decode(String.self, forKey: .message)
-        room = try container.decode(Room.self, forKey: .data)
+        room = try? container.decode(Room.self, forKey: .data)
     }
 }
 

@@ -10,14 +10,13 @@ import XCTest
 
 extension APIClientTests {
     func test_createRoom() {
-        let request = RoomListRequest()
-        
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        apiClient?.createRoom(title: "첫번쨰방", password: "123456") { result in
+        apiClient?.createRoom(title: "첫번쨰방", password: "123a456") { result in
             switch result {
-            case .success:
+            case .success(let response):
+                print("✅ response?.id \(response?.id)")
                 XCTAssert(true)
             case .failure(let error):
                 if let error = error as? APIClient.APIError {
@@ -26,9 +25,10 @@ extension APIClientTests {
                     XCTFail(error.localizedDescription)
                 }
             }
+            expectation.fulfill()
         }
         
-        expectation.fulfill()
+//        wait(for: [expectation], timeout: 30)
     }
 
 }

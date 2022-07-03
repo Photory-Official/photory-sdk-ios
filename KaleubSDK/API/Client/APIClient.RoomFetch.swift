@@ -22,12 +22,13 @@ extension APIClient {
         }
     }
     
-    func createRoom(title: String, password: String, resultHandler: @escaping (Result<Room, Error>) -> Void) {
+    func createRoom(title: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
         let request = RoomCreateRequest(title: title, password: password)
         self.send(request) { result in
             switch result {
-            case .success:
-                resultHandler(.success(result.))
+            case .success(let response):
+                let room = response.room
+                resultHandler(.success(room))
             case .failure(let error):
                 resultHandler(.failure(error))
             }

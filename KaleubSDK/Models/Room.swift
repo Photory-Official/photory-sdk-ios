@@ -8,6 +8,11 @@
 import Foundation
 
 public class Room: Codable {
+    
+    /// 방 생성시간
+    public var createdDate: Double
+    /// 방 수정시간
+    public var modifiedDate: Double
     /// 방 id
     public let id: Int64
     /// 방 코드
@@ -19,10 +24,8 @@ public class Room: Codable {
     /// 방 비밀번호(암호화)
     public var password: String
     public var participantsCount: Int
-    /// 방 생성시간
-    public var createdDate: Double
-    /// 방 수정시간
-    public var modifiedDate: Double
+    /// 방 활성화 상태
+    public var state: Bool
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -33,6 +36,7 @@ public class Room: Codable {
         case participantsCount
         case createdDate = "createdAt"
         case modifiedDate = "updatedAt"
+        case state = "status"
     }
     
     var apiClient: APIClient!
@@ -46,7 +50,8 @@ public class Room: Codable {
         participantsCount: Int = 0,
         createdDate: Double,
         modifiedDate: Double,
-        apiClient: APIClient
+        apiClient: APIClient,
+        state: Bool
     ) {
         self.id = id
         self.code = code
@@ -56,6 +61,7 @@ public class Room: Codable {
         self.participantsCount = participantsCount
         self.createdDate = createdDate
         self.modifiedDate = modifiedDate
+        self.state = state
     }
     
     public required init(from decoder: Decoder) throws {
@@ -68,8 +74,10 @@ public class Room: Codable {
         self.participantsCount = (try? container.decode(Int.self, forKey: .participantsCount)) ?? 0
         self.createdDate = try container.decode(Double.self, forKey: .createdDate)
         self.modifiedDate = try container.decode(Double.self, forKey: .modifiedDate)
+        self.state = try container.decode(Bool.self, forKey: .state)
     }
     
+    // NOTE: - 어떻게 사용해야 할까요?
     public enum Role {
         case host
         case pariticipant

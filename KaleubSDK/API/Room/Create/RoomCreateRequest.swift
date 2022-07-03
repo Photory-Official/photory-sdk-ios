@@ -26,10 +26,9 @@ struct RoomCreateRequest: Request, Respondable {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
         
-        guard let data = try? JSONSerialization.data(withJSONObject: [
-            "title": title,
-            "password": password
-        ]) else { return nil }
+        let object = ["title": title, "password": password]
+        let data = try? JSONSerialization.data(withJSONObject: object, options: [])
+        
         urlRequest.httpBody = data
         
         // NOTE: - UserToken을 넣어야 합니다.
