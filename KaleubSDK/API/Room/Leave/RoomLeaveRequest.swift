@@ -12,9 +12,10 @@ struct RoomLeaveRequest: Request, Respondable {
 
     let method: APIClient.Method = .delete
     
-    var key: String { "room/participant" }
+    var key: String { "room/participate" }
     
     let roomId: Int64
+    let token = AppStorageManager.token ?? ""
     
     func urlRequst(baseURL: URL) -> URLRequest? {
         guard let url = URL(string: "\(baseURL)/\(key)") else {
@@ -30,7 +31,7 @@ struct RoomLeaveRequest: Request, Respondable {
         urlRequest.httpBody = data
         
         // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
 }

@@ -64,7 +64,7 @@ extension APIClientTests {
             switch result {
             case .success(let response):
                 response.forEach { room in
-                    print("✅ room \(room.code)")
+                    print("✅ room \(room.code) id \(room.id)")
                 }
                 
                 XCTAssert(true)
@@ -78,6 +78,29 @@ extension APIClientTests {
             expectation.fulfill()
         }
         
+        wait(for: [expectation], timeout: 30)
+    }
+
+    func test_deleteRoom() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+
+        // T1464V01, 123a456
+        apiClient?.leaveRoom(roomId: 1) { result in
+            switch result {
+            case .success:
+                print("✅")
+                XCTAssert(true)
+            case .failure(let error):
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
+            }
+            expectation.fulfill()
+        }
+
         wait(for: [expectation], timeout: 30)
     }
 }
