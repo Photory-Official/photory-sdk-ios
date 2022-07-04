@@ -31,7 +31,7 @@ extension APIClientTests {
         wait(for: [expectation], timeout: 30)
     }
 
-    // FIXME: - 405번 error 내려오는데 API명세서에 해당 내용이 기술되지 않음
+    // NOTE: - 바꾼 코드는 없는데, 어제 밤에는 실패하던 코드가 오늘 아침에 해보니까 통과함
     func test_enterRoom() {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
