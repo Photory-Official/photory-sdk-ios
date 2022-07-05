@@ -72,4 +72,16 @@ extension APIClient {
             }
         }
     }
+    
+    func kickRoom(roomId: Int64, deleteUserId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = RoomKickRequest(roomId: roomId, deletedUserId: deleteUserId)
+        self.send(request) { result in
+            switch result {
+            case .success:
+                resultHandler(.success(()))
+            case .failure(let error):
+                resultHandler(.failure(error))
+            }
+        }
+    }
 }

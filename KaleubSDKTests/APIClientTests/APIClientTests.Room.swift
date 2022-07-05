@@ -106,15 +106,6 @@ extension APIClientTests {
         wait(for: [expectation], timeout: 30)
     }
     
-    /*
-     ✅ room M8KEZ628 id 1
-     ✅ room Z707YF9T id 2
-     ✅ room 86LY0W49 id 3
-     ✅ room CQJ5C201 id 4
-     ✅ room T1464V01 id 5
-     ✅ room N6W90TN1 id 6
-     */
-    
     func test_disableRoom() {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
@@ -137,4 +128,29 @@ extension APIClientTests {
         wait(for: [expectation], timeout: 30)
     }
     
+    func test_kickRoom() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+
+        let roomId: Int64 = 1
+        let deleteUserId: Int64 = 2
+        
+        apiClient?.kickRoom(roomId: roomId, deleteUserId: deleteUserId) { result in
+            switch result {
+            case .success:
+                print("✅")
+                XCTAssert(true)
+            case .failure(let error):
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 30)
+
+    }
 }
