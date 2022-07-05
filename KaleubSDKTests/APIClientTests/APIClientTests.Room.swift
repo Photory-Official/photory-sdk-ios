@@ -181,4 +181,29 @@ extension APIClientTests {
         wait(for: [expectation], timeout: 30)
     }
     
+    // NOTE: 테스트케이스 실패. 현재 방 상세정보에 대한 API가 없어서 서버가 보충 후에 보완하기
+    func test_changeOwnerRoom() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+
+        let roomId: Int64 = 1
+        let delegatedUserId: Int64 = 2
+
+        apiClient?.changeOwnerRoom(roomId: roomId, delegatedUserId: delegatedUserId){ result in
+            switch result {
+            case .success:
+                print("✅")
+                XCTAssert(true)
+            case .failure(let error):
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 30)
+    }
 }

@@ -16,6 +16,7 @@ struct RoomOwnerRequest: Request, Respondable {
     
     let roomId: Int64
     let delegatedUserId: Int64
+    let token = AppStorageManager.token ?? ""
     
     func urlRequst(baseURL: URL) -> URLRequest? {
         guard let url = URL(string: "\(baseURL)/\(key)") else {
@@ -32,7 +33,7 @@ struct RoomOwnerRequest: Request, Respondable {
         urlRequest.httpBody = data
         
         // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
 }
