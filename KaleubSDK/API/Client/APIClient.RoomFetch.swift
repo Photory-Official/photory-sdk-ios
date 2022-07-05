@@ -59,6 +59,17 @@ extension APIClient {
                 resultHandler(.failure(error))
             }
         }
-        
+    }
+    
+    func disableRoom(roomId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = RoomDisableRequest(roomId: roomId)
+        self.send(request) { result in
+            switch result {
+            case .success:
+                resultHandler(.success(()))
+            case .failure(let error):
+                resultHandler(.failure(error))
+            }
+        }
     }
 }

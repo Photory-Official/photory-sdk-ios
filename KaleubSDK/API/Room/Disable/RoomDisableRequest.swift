@@ -15,6 +15,7 @@ struct RoomDisableRequest: Request, Respondable {
     var key: String { "room/disable" }
     
     let roomId: Int64
+    let token = AppStorageManager.token ?? ""
     
     func urlRequst(baseURL: URL) -> URLRequest? {
         guard let url = URL(string: "\(baseURL)/\(key)") else {
@@ -30,7 +31,7 @@ struct RoomDisableRequest: Request, Respondable {
         urlRequest.httpBody = data
         
         // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
 }

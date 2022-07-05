@@ -194,13 +194,13 @@
 			path = Leave;
 			sourceTree = "<group>";
 		};
-		A9321E2F286193F600DE1BB3 /* Delete */ = {
+		A9321E2F286193F600DE1BB3 /* Disable */ = {
 			isa = PBXGroup;
 			children = (
 				A9321E1C286191B400DE1BB3 /* RoomDisableRequest.swift */,
 				A9321E1E286191C600DE1BB3 /* RoomDisableResponse.swift */,
 			);
-			path = Delete;
+			path = Disable;
 			sourceTree = "<group>";
 		};
 		A9321E30286193FC00DE1BB3 /* Password */ = {
@@ -320,10 +320,11 @@
 				A9321E122861879E00DE1BB3 /* Create */,
 				A9321E1728618C5500DE1BB3 /* Enter */,
 				A9321E30286193FC00DE1BB3 /* Password */,
-				A9321E2F286193F600DE1BB3 /* Delete */,
+				A9321E2F286193F600DE1BB3 /* Disable */,
 				A9321E2E286193ED00DE1BB3 /* Leave */,
 				A9321E2D286193DF00DE1BB3 /* Owner */,
 				A9321E24286191EE00DE1BB3 /* Kick */,
+				B1CB587D287481C100482C0D /* Delete */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -394,6 +395,13 @@
 				B1C86C68285C7201002B28C5 /* AuthKeyValidationResponse.swift */,
 			);
 			path = AuthKeyValidation;
+			sourceTree = "<group>";
+		};
+		B1CB587D287481C100482C0D /* Delete */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delete;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

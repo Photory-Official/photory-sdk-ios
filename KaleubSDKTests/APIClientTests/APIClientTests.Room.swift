@@ -55,6 +55,7 @@ extension APIClientTests {
         wait(for: [expectation], timeout: 30)
     }
     
+    // NOTE: - 방 조회
     func test_fetchRoom() {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
@@ -81,7 +82,8 @@ extension APIClientTests {
         wait(for: [expectation], timeout: 30)
     }
 
-    func test_deleteRoom() {
+    // NOTE: - 방 나가기
+    func test_leaveRoom() {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
 
@@ -103,4 +105,36 @@ extension APIClientTests {
 
         wait(for: [expectation], timeout: 30)
     }
+    
+    /*
+     ✅ room M8KEZ628 id 1
+     ✅ room Z707YF9T id 2
+     ✅ room 86LY0W49 id 3
+     ✅ room CQJ5C201 id 4
+     ✅ room T1464V01 id 5
+     ✅ room N6W90TN1 id 6
+     */
+    
+    func test_disableRoom() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+
+        apiClient?.disableRoom(roomId: 1) { result in
+            switch result {
+            case .success:
+                print("✅")
+                XCTAssert(true)
+            case .failure(let error):
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 30)
+    }
+    
 }
