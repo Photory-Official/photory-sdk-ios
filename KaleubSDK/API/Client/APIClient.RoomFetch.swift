@@ -84,4 +84,16 @@ extension APIClient {
             }
         }
     }
+    
+    func passwordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = RoomPasswordRequest(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword)
+        self.send(request) { result in
+            switch result {
+            case .success:
+                resultHandler(.success(()))
+            case .failure(let error):
+                resultHandler(.failure(error))
+            }
+        }
+    }
 }

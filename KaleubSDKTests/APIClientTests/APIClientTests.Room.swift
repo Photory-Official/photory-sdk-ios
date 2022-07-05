@@ -65,7 +65,8 @@ extension APIClientTests {
             switch result {
             case .success(let response):
                 response.forEach { room in
-                    print("✅ room \(room.code) id \(room.id)")
+                    print("✅ room code \(room.code) id \(room.id) password \(room.password) state \(room.state) ")
+                    
                 }
                 
                 XCTAssert(true)
@@ -151,6 +152,33 @@ extension APIClientTests {
         }
 
         wait(for: [expectation], timeout: 30)
-
     }
+    
+    // NOTE: - 이전 비밀번호 입력이 굳이 필요할 거 같음. 이거 없애는거 논의
+    func test_passwordRoom() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+
+        let roomId: Int64 = 1
+        let beforePassword: String = "abcde456"
+        let afterPassword: String = "abcde456"
+        
+        apiClient?.passwordRoom(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword) { result in
+            switch result {
+            case .success:
+                print("✅")
+                XCTAssert(true)
+            case .failure(let error):
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 30)
+    }
+    
 }
