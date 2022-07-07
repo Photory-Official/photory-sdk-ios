@@ -62,4 +62,28 @@ extension APIClientTests {
         
         wait(for: [expectation], timeout: 30)
     }
+    
+    func test_deleteFeed() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+        
+        let feedId: Int64 = 1
+        
+        apiClient?.deleateFeed(feedId: feedId) { result in
+            switch result {
+            case .success:
+                print("✅")
+                XCTAssert(true)
+            case .failure(let error):
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
+            }
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 30)
+    }
 }

@@ -35,6 +35,19 @@ extension APIClient {
         }
     }
     
+    func deleateFeed(feedId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        let request = FeedDeleteRequest(feedId: feedId)
+        self.send(request) { result in
+            switch result {
+            case .success:
+                resultHandler(.success(()))
+            case .failure(let error):
+                resultHandler(.failure(error))
+            }
+        }
+    }
+    
+    
     //    func signIn(email: String, password: String, resultHandler: @escaping (Result<String, Error>) -> Void) {
     //        let request = SignInRequest(email: email, password: password)
     //        self.send(request) { result in
