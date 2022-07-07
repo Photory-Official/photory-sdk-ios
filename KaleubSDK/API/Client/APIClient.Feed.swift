@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 extension APIClient {
     
     // FIXME: 이미지(파일) 타입을 서버로 올리는 것을 해보지 않아서 일단 작성은 해두나 이 부분에 대해서는 구글링 필요
-    func createFeed(image: [String], roomId: Int64, title: String, content: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+    func createFeed(image: [UIImage], roomId: Int64, title: String, content: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let reqeust = FeedCreateRequest(image: image, roomId: roomId, title: title, content: content)
         self.send(reqeust) { result in
             switch result {
