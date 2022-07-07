@@ -9,7 +9,7 @@ import Foundation
 
 struct SignInTokenRequest: Request, Respondable {
     typealias ResponseType = SignInResponse
-    let userToken = AppStorageManager.token ?? ""
+    let token = AppStorageManager.token ?? ""
     
     let method: APIClient.Method = .get
     
@@ -19,15 +19,14 @@ struct SignInTokenRequest: Request, Respondable {
         guard let url = URL(string: "\(baseURL)/\(key)") else {
             return nil
         }
-        
-        
-        print("🤔 \(userToken)")
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
+        
         urlRequest.addValue(
-            "Bearer \(userToken)",
+            "Bearer \(token)",
             forHTTPHeaderField: "Authorization"
         )
+        
         return urlRequest
     }
 }
