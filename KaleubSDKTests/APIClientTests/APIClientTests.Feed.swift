@@ -13,7 +13,7 @@ extension APIClientTests {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        let image: [String] = []
+        let image: [UIImage] = []
         let roomId: Int64 = 1
         let title: String = ""
         let content: String = ""

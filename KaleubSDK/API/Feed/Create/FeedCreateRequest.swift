@@ -5,7 +5,7 @@
 //  Created by Hamlit Jason on 2022/07/07.
 //
 
-import Foundation
+import UIKit
 
 struct FeedCreateRequest: Request, Respondable {
     typealias ResponseType = FeedCreateResponse
@@ -14,7 +14,7 @@ struct FeedCreateRequest: Request, Respondable {
     
     var key: String { "feed" }
     
-    let image: [String] // NOTE: 어떻게 서버로 보낼까 타입이 뭘까?
+    let image: [UIImage] // NOTE: 어떻게 서버로 보낼까 타입이 뭘까?
     let roomId: Int64
     let title: String
     let content: String
