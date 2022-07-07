@@ -23,6 +23,7 @@ public class Room: Codable {
     public var title: String
     /// 방 비밀번호(암호화)
     public var password: String
+    /// 방 참여인원
     public var participantsCount: Int
     /// 방 활성화 상태
     public var state: Bool

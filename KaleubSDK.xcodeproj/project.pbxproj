@@ -67,6 +67,8 @@
 		B1C86C69285C7201002B28C5 /* AuthKeyValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C68285C7201002B28C5 /* AuthKeyValidationResponse.swift */; };
 		B1C86C6C285C7483002B28C5 /* APIClient.SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */; };
 		B1C86C6E285C7502002B28C5 /* APIClient.SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */; };
+		B1E0706728774E1D00E845D6 /* FeedListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0706628774E1D00E845D6 /* FeedListRequest.swift */; };
+		B1E0706928774E2E00E845D6 /* FeedListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0706828774E2E00E845D6 /* FeedListResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,8 @@
 		B1C86C68285C7201002B28C5 /* AuthKeyValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeyValidationResponse.swift; sourceTree = "<group>"; };
 		B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignUp.swift; sourceTree = "<group>"; };
 		B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignIn.swift; sourceTree = "<group>"; };
+		B1E0706628774E1D00E845D6 /* FeedListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListRequest.swift; sourceTree = "<group>"; };
+		B1E0706828774E2E00E845D6 /* FeedListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +364,7 @@
 				B187B9C92876DED9006EA83E /* Create */,
 				B187B9CE2876E2CE006EA83E /* Update */,
 				B187B9DA2876F703006EA83E /* Detail */,
+				B1E0706A28774ECE00E845D6 /* List */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -467,6 +472,15 @@
 				B1C86C68285C7201002B28C5 /* AuthKeyValidationResponse.swift */,
 			);
 			path = AuthKeyValidation;
+			sourceTree = "<group>";
+		};
+		B1E0706A28774ECE00E845D6 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B1E0706628774E1D00E845D6 /* FeedListRequest.swift */,
+				B1E0706828774E2E00E845D6 /* FeedListResponse.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +597,7 @@
 				B1412AE4285B4ABB006ED59E /* RoomListResponse.swift in Sources */,
 				A9F0AB56285B22B0001171F1 /* KaleubSDK.docc in Sources */,
 				B1412AD5285B3892006ED59E /* SignUpResonse.swift in Sources */,
+				B1E0706928774E2E00E845D6 /* FeedListResponse.swift in Sources */,
 				B187B9CD2876E2CA006EA83E /* FeedUpdateResponse.swift in Sources */,
 				B151A6B428766AE600BA3993 /* APIClient.Feed.swift in Sources */,
 				B187B9D02876E3FB006EA83E /* Feed.swift in Sources */,
@@ -603,6 +618,7 @@
 				B1C86C5E285C6944002B28C5 /* EmailValidationResponse.swift in Sources */,
 				A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */,
 				A9321E0828617C5A00DE1BB3 /* RoomListQuery.swift in Sources */,
+				B1E0706728774E1D00E845D6 /* FeedListRequest.swift in Sources */,
 				A9321E2A286193D100DE1BB3 /* RoomOwnerRequest.swift in Sources */,
 				A9321E1F286191C600DE1BB3 /* RoomDisableResponse.swift in Sources */,
 				A9321E2C286193DA00DE1BB3 /* RoomOwnerResponse.swift in Sources */,
