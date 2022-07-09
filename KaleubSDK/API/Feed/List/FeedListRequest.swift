@@ -21,7 +21,7 @@ struct FeedListRequest: Request, Respondable {
     func urlRequst(baseURL: URL) -> URLRequest? {
         // feed?roomId=&size=&lastFeedId=
         let query = "?roomId=\(roomId)&size=\(size)&lastFeedId=\(lastFeedId)"
-        guard let url = URL(string: "\(baseURL)/\(key)\(query)") else {
+        guard let url = URL(string: "\(baseURL)/\(key)/\(query)") else {
             return nil
         }
 

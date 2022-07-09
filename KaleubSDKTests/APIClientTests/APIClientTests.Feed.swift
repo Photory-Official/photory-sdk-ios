@@ -86,4 +86,31 @@ extension APIClientTests {
         
         wait(for: [expectation], timeout: 30)
     }
+    
+    // FIXME: 요청 자체 실패, API 문서 다시 확인하기
+    func test_fetchFeed() {
+        let expectation = XCTestExpectation()
+        expectation.expectedFulfillmentCount = 1
+        
+        let roomId: Int64 = 1
+        let size: Int = 1
+        let lastFeedId: Int64 = 1
+        
+        apiClient?.fetchFeedList(roomId: roomId, size: size, lastFeedId: lastFeedId) { result in
+            switch result {
+            case .success:
+                print("✅")
+                XCTAssert(true)
+            case .failure(let error):
+                if let error = error as? APIClient.APIError {
+                    XCTFail(error.localizedDescription)
+                } else {
+                    XCTFail(error.localizedDescription)
+                }
+            }
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 30)
+    }
 }

@@ -25,6 +25,6 @@ struct FeedListResponse: Response, Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         status = try container.decode(Int.self, forKey: .status)
         message = try container.decode(String.self, forKey: .message)
-        feedContents = try container.decode(FeedContent.self, forKey: .data)
+        feedContents = try? container.decode(FeedContent.self, forKey: .data)
     }
 }

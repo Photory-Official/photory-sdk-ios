@@ -47,6 +47,18 @@ extension APIClient {
         }
     }
     
+    func fetchFeedList(roomId: Int64, size: Int, lastFeedId: Int64, resultHandler: @escaping (Result<FeedContent?, Error>) -> Void) {
+        let request = FeedListRequest(roomId: roomId, size: size, lastFeedId: lastFeedId)
+        self.send(request) { result in
+            switch result {
+            case .success(let response):
+                let feedContents = response.feedContents
+                resultHandler(.success((feedContents)))
+            case .failure(let error):
+                resultHandler(.failure(error))
+            }
+        }
+    }
     
     //    func signIn(email: String, password: String, resultHandler: @escaping (Result<String, Error>) -> Void) {
     //        let request = SignInRequest(email: email, password: password)
