@@ -67,6 +67,7 @@
 		B1C86C69285C7201002B28C5 /* AuthKeyValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C68285C7201002B28C5 /* AuthKeyValidationResponse.swift */; };
 		B1C86C6C285C7483002B28C5 /* APIClient.SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */; };
 		B1C86C6E285C7502002B28C5 /* APIClient.SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */; };
+		B1DBF8D8287952380030E0B2 /* Feed.Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBF8D7287952380030E0B2 /* Feed.Contents.swift */; };
 		B1E0706728774E1D00E845D6 /* FeedListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0706628774E1D00E845D6 /* FeedListRequest.swift */; };
 		B1E0706928774E2E00E845D6 /* FeedListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0706828774E2E00E845D6 /* FeedListResponse.swift */; };
 /* End PBXBuildFile section */
@@ -143,6 +144,7 @@
 		B1C86C68285C7201002B28C5 /* AuthKeyValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeyValidationResponse.swift; sourceTree = "<group>"; };
 		B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignUp.swift; sourceTree = "<group>"; };
 		B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignIn.swift; sourceTree = "<group>"; };
+		B1DBF8D7287952380030E0B2 /* Feed.Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.Contents.swift; sourceTree = "<group>"; };
 		B1E0706628774E1D00E845D6 /* FeedListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListRequest.swift; sourceTree = "<group>"; };
 		B1E0706828774E2E00E845D6 /* FeedListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,6 +340,7 @@
 			children = (
 				A9F0AB72285B32C4001171F1 /* Room.swift */,
 				B187B9CF2876E3FB006EA83E /* Feed.swift */,
+				B1DBF8D7287952380030E0B2 /* Feed.Contents.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				A9321E1628618BA400DE1BB3 /* RoomEnterResponse.swift in Sources */,
 				A9321E282861934000DE1BB3 /* RoomKickResponse.swift in Sources */,
 				B1412AE2285B4A91006ED59E /* RoomListRequest.swift in Sources */,
+				B1DBF8D8287952380030E0B2 /* Feed.Contents.swift in Sources */,
 				B1C86C58285C51B6002B28C5 /* StringSet.swift in Sources */,
 				B1C86C5E285C6944002B28C5 /* EmailValidationResponse.swift in Sources */,
 				A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */,
