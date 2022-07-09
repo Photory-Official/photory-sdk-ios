@@ -71,7 +71,7 @@ public class Room: Codable {
         self.code = try container.decode(String.self, forKey: .code)
         self.ownerEmail = try container.decode(String.self, forKey: .ownerEmail)
         self.title = try container.decode(String.self, forKey: .title)
-        self.password = try container.decode(String.self, forKey: .code)
+        self.password = try container.decode(String.self, forKey: .password)
         self.participantsCount = (try? container.decode(Int.self, forKey: .participantsCount)) ?? 0
         self.createdDate = try container.decode(Double.self, forKey: .createdDate)
         self.modifiedDate = try container.decode(Double.self, forKey: .modifiedDate)
