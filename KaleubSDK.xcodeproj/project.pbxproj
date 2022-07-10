@@ -67,6 +67,8 @@
 		B1C86C69285C7201002B28C5 /* AuthKeyValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C68285C7201002B28C5 /* AuthKeyValidationResponse.swift */; };
 		B1C86C6C285C7483002B28C5 /* APIClient.SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */; };
 		B1C86C6E285C7502002B28C5 /* APIClient.SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */; };
+		B1D4B9462879C42200E5C937 /* RoomDetailListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4B9452879C42200E5C937 /* RoomDetailListRequest.swift */; };
+		B1D4B9482879C43200E5C937 /* RoomDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4B9472879C43200E5C937 /* RoomDetailResponse.swift */; };
 		B1DBF8D8287952380030E0B2 /* Feed.Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBF8D7287952380030E0B2 /* Feed.Contents.swift */; };
 		B1E0706728774E1D00E845D6 /* FeedListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0706628774E1D00E845D6 /* FeedListRequest.swift */; };
 		B1E0706928774E2E00E845D6 /* FeedListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0706828774E2E00E845D6 /* FeedListResponse.swift */; };
@@ -144,6 +146,8 @@
 		B1C86C68285C7201002B28C5 /* AuthKeyValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeyValidationResponse.swift; sourceTree = "<group>"; };
 		B1C86C6B285C7483002B28C5 /* APIClient.SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignUp.swift; sourceTree = "<group>"; };
 		B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignIn.swift; sourceTree = "<group>"; };
+		B1D4B9452879C42200E5C937 /* RoomDetailListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailListRequest.swift; sourceTree = "<group>"; };
+		B1D4B9472879C43200E5C937 /* RoomDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailResponse.swift; sourceTree = "<group>"; };
 		B1DBF8D7287952380030E0B2 /* Feed.Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.Contents.swift; sourceTree = "<group>"; };
 		B1E0706628774E1D00E845D6 /* FeedListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListRequest.swift; sourceTree = "<group>"; };
 		B1E0706828774E2E00E845D6 /* FeedListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListResponse.swift; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 		B1412AE0285B4A4E006ED59E /* Room */ = {
 			isa = PBXGroup;
 			children = (
+				B1D4B9442879C40600E5C937 /* Detail */,
 				A9321E0F2861864D00DE1BB3 /* List */,
 				A9321E122861879E00DE1BB3 /* Create */,
 				A9321E1728618C5500DE1BB3 /* Enter */,
@@ -475,6 +480,15 @@
 				B1C86C68285C7201002B28C5 /* AuthKeyValidationResponse.swift */,
 			);
 			path = AuthKeyValidation;
+			sourceTree = "<group>";
+		};
+		B1D4B9442879C40600E5C937 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B1D4B9452879C42200E5C937 /* RoomDetailListRequest.swift */,
+				B1D4B9472879C43200E5C937 /* RoomDetailResponse.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		B1E0706A28774ECE00E845D6 /* List */ = {
@@ -611,6 +625,7 @@
 				A9321E23286191E100DE1BB3 /* RoomLeaveResponse.swift in Sources */,
 				B1C86C63285C6FDD002B28C5 /* SendVerificationMailRequest.swift in Sources */,
 				B187B9D52876EB26006EA83E /* FeedDeleteResponse.swift in Sources */,
+				B1D4B9462879C42200E5C937 /* RoomDetailListRequest.swift in Sources */,
 				B1C86C5A285C5A72002B28C5 /* SignInTokenRequest.swift in Sources */,
 				A9321E0A28617E0D00DE1BB3 /* APIClient.Room.swift in Sources */,
 				A9321E26286191FC00DE1BB3 /* RoomKickRequest.swift in Sources */,
@@ -636,6 +651,7 @@
 				B187B9D92876F6FF006EA83E /* FeedDetailResponse.swift in Sources */,
 				B151A6B22876696F00BA3993 /* FeedCreateResponse.swift in Sources */,
 				B187B9D72876F6F5006EA83E /* FeedDetailRequest.swift in Sources */,
+				B1D4B9482879C43200E5C937 /* RoomDetailResponse.swift in Sources */,
 				B1412AD7285B38A3006ED59E /* SignUpRequest.swift in Sources */,
 				A9F0AB6F285B2CBA001171F1 /* Kaleub.swift in Sources */,
 				B1412ADA285B38C2006ED59E /* Request.swift in Sources */,

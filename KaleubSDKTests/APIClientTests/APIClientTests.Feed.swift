@@ -37,6 +37,7 @@ extension APIClientTests {
         wait(for: [expectation], timeout: 30)
     }
     
+    // FIXME: 얘 갑자기 왜 안돼??
     func test_updateFeed() {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
@@ -98,7 +99,8 @@ extension APIClientTests {
         
         apiClient?.fetchFeedList(roomId: roomId, size: size, lastFeedId: lastFeedId) { result in
             switch result {
-            case .success:
+            case .success(let resonse):
+                print(resonse?.contents)
                 print("✅")
                 XCTAssert(true)
             case .failure(let error):

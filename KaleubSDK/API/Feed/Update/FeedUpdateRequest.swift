@@ -9,7 +9,7 @@ import UIKit
 
 struct FeedUpdateRequest: Request, Respondable {
     typealias ResponseType = FeedUpdateResponse
-
+    
     let method: APIClient.Method = .put
     
     var key: String { "feed" }
@@ -23,7 +23,7 @@ struct FeedUpdateRequest: Request, Respondable {
         guard let url = URL(string: "\(baseURL)/\(key)") else {
             return nil
         }
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
         
@@ -36,7 +36,14 @@ struct FeedUpdateRequest: Request, Respondable {
         
         urlRequest.httpBody = data
         
-        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        urlRequest.addValue(
+            "Bearer \(token)",
+            forHTTPHeaderField: "Authorization"
+        )
         return urlRequest
     }
 }

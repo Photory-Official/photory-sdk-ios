@@ -27,6 +27,11 @@ struct SendVerificationMailRequest: Request, Respondable {
         let data = try? JSONSerialization.data(withJSONObject: object, options: [])
         urlRequest.httpBody = data
         
+        urlRequest.addValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        
         return urlRequest
     }
 }

@@ -38,8 +38,15 @@ struct FeedCreateRequest: Request, Respondable {
         
         urlRequest.httpBody = data
         
-        // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(
+            "multipart/form-data",
+            forHTTPHeaderField: "Content-Type"
+        )
+        urlRequest.addValue(
+            "Bearer \(token)",
+            forHTTPHeaderField: "Authorization"
+        )
+        
         return urlRequest
     }
 }

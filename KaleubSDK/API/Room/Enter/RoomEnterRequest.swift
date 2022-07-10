@@ -31,8 +31,14 @@ struct RoomEnterRequest: Request, Respondable {
         
         urlRequest.httpBody = data
         
-        // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        urlRequest.addValue(
+            "Bearer \(token)",
+            forHTTPHeaderField: "Authorization"
+        )
         return urlRequest
     }
 }

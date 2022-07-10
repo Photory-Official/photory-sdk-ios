@@ -30,7 +30,15 @@ struct FeedDeleteRequest: Request, Respondable {
         ]) else { return nil }
         urlRequest.httpBody = data
     
-        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        urlRequest.addValue(
+            "Bearer \(token)",
+            forHTTPHeaderField: "Authorization"
+        )
+        
         return urlRequest
     }
 }

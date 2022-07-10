@@ -79,7 +79,7 @@ extension APIClientTests {
     }
     
     func test_checkAuthKeyValidation() {
-        let email: String = "test@gmail.com"
+        let email: String = "teset@gmail.com"
         let authKey: String = "123456"
         
         let expectation = XCTestExpectation()

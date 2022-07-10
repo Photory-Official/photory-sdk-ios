@@ -9,7 +9,7 @@ import Foundation
 
 struct RoomPasswordRequest: Request, Respondable {
     typealias ResponseType = RoomPasswordResponse
-
+    
     let method: APIClient.Method = .put
     
     var key: String { "room/password" }
@@ -23,7 +23,7 @@ struct RoomPasswordRequest: Request, Respondable {
         guard let url = URL(string: "\(baseURL)/\(key)") else {
             return nil
         }
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
         
@@ -34,8 +34,14 @@ struct RoomPasswordRequest: Request, Respondable {
         ]) else { return nil }
         urlRequest.httpBody = data
         
-        // NOTE: - UserToken을 넣어야 합니다.
-        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        urlRequest.addValue(
+            "Bearer \(token)",
+            forHTTPHeaderField: "Authorization"
+        )
         return urlRequest
     }
 }

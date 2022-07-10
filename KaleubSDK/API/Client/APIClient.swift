@@ -10,7 +10,7 @@ import Combine
 class APIClient: ObservableObject {
     static let urlString: String = {
         // TODO: DEBUG, PRODUCTION
-        return "http://13.125.253.133:8080"
+        return "http://3.35.37.181:8080"
     }()
 
     let version: String = "/v1"
@@ -64,10 +64,7 @@ class APIClient: ObservableObject {
             resultHandler(.failure(APIError.invalidURLRequest))
             return
         }
-        urlRequest.addValue(
-            "application/json",
-            forHTTPHeaderField: "Content-Type"
-        )
+        
         urlRequest.timeoutInterval = 30
         
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in

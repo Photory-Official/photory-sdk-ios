@@ -9,7 +9,7 @@ import Foundation
 
 struct FeedDetailRequest: Request, Respondable {
     typealias ResponseType = FeedDetailResponse
-
+    
     let method: APIClient.Method = .get
     
     var key: String { "feed" }
@@ -21,11 +21,18 @@ struct FeedDetailRequest: Request, Respondable {
         guard let url = URL(string: "\(baseURL)/\(key)/\(feedId)") else {
             return nil
         }
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
         
-        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        urlRequest.addValue(
+            "Bearer \(token)",
+            forHTTPHeaderField: "Authorization"
+        )
         return urlRequest
     }
 }

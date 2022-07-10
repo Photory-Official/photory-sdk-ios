@@ -28,7 +28,14 @@ struct FeedListRequest: Request, Respondable {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.stringValue
         
-        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        urlRequest.addValue(
+            "Bearer \(token)",
+            forHTTPHeaderField: "Authorization"
+        )
         return urlRequest
     }
 }
