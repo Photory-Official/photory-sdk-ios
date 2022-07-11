@@ -69,6 +69,8 @@
 		B1C86C6E285C7502002B28C5 /* APIClient.SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */; };
 		B1D4B9462879C42200E5C937 /* RoomDetailListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4B9452879C42200E5C937 /* RoomDetailListRequest.swift */; };
 		B1D4B9482879C43200E5C937 /* RoomDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4B9472879C43200E5C937 /* RoomDetailResponse.swift */; };
+		B1D57425287C4DD100A6E40C /* PhotoryKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D57424287C4DD100A6E40C /* PhotoryKey.framework */; };
+		B1D57426287C4DD100A6E40C /* PhotoryKey.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D57424287C4DD100A6E40C /* PhotoryKey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1DBF8D8287952380030E0B2 /* Feed.Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBF8D7287952380030E0B2 /* Feed.Contents.swift */; };
 		B1E0706728774E1D00E845D6 /* FeedListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0706628774E1D00E845D6 /* FeedListRequest.swift */; };
 		B1E0706928774E2E00E845D6 /* FeedListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0706828774E2E00E845D6 /* FeedListResponse.swift */; };
@@ -83,6 +85,20 @@
 			remoteInfo = KaleubSDK;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B1D57427287C4DD100A6E40C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B1D57426287C4DD100A6E40C /* PhotoryKey.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A9321E0728617C5A00DE1BB3 /* RoomListQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListQuery.swift; sourceTree = "<group>"; };
@@ -148,6 +164,8 @@
 		B1C86C6D285C7502002B28C5 /* APIClient.SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.SignIn.swift; sourceTree = "<group>"; };
 		B1D4B9452879C42200E5C937 /* RoomDetailListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailListRequest.swift; sourceTree = "<group>"; };
 		B1D4B9472879C43200E5C937 /* RoomDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailResponse.swift; sourceTree = "<group>"; };
+		B1D57420287C4D7200A6E40C /* PhotoryKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoryKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1D57424287C4DD100A6E40C /* PhotoryKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoryKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DBF8D7287952380030E0B2 /* Feed.Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.Contents.swift; sourceTree = "<group>"; };
 		B1E0706628774E1D00E845D6 /* FeedListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListRequest.swift; sourceTree = "<group>"; };
 		B1E0706828774E2E00E845D6 /* FeedListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListResponse.swift; sourceTree = "<group>"; };
@@ -158,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D57425287C4DD100A6E40C /* PhotoryKey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +269,7 @@
 				A9F0AB53285B22B0001171F1 /* KaleubSDK */,
 				A9F0AB5F285B22B0001171F1 /* KaleubSDKTests */,
 				A9F0AB52285B22B0001171F1 /* Products */,
+				B1D5741F287C4D7200A6E40C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -491,6 +511,15 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		B1D5741F287C4D7200A6E40C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1D57424287C4DD100A6E40C /* PhotoryKey.framework */,
+				B1D57420287C4D7200A6E40C /* PhotoryKey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B1E0706A28774ECE00E845D6 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +551,7 @@
 				A9F0AB4D285B22B0001171F1 /* Sources */,
 				A9F0AB4E285B22B0001171F1 /* Frameworks */,
 				A9F0AB4F285B22B0001171F1 /* Resources */,
+				B1D57427287C4DD100A6E40C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

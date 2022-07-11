@@ -6,11 +6,12 @@
 //
 
 import Combine
+import PhotoryKey
 
 class APIClient: ObservableObject {
     static let urlString: String = {
         // TODO: DEBUG, PRODUCTION
-        return "http://3.35.37.181:8080"
+        return PhotoryKey.urlString
     }()
 
     let version: String = "/v1"
