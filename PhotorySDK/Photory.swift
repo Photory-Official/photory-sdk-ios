@@ -17,4 +17,11 @@ public class Photory {
     public static func createRoom(title: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
         main.createRoom(title: title, password: password, resultHandler: resultHandler)
     }
+    
+    // MARK: - AppStorage
+    
+    public static var userToken: String? {
+        get { main.userToken }
+        set { main.userToken = newValue }
+    }
 }

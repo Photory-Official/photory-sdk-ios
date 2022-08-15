@@ -86,7 +86,12 @@ class PhotoryMain {
             }
         }
     }
-    
+   
+    /// userToken토큰 (고유 id)
+    var userToken: String? {
+        get { AppStorageManager.token }
+        set { AppStorageManager.token = newValue }
+    }
     
 //    // MARK: - Room List
 //    func createRoomListQuery(with params: RoomListQuery.Params = .init()) -> RoomListQuery {
