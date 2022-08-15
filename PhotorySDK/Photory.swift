@@ -9,4 +9,12 @@ import Foundation
 
 public class Photory {
     static let main = PhotoryMain()
+    
+    public static func fetchRoom(resultHandler: @escaping (Result<[Room], Error>) -> Void) {
+        main.fetchRoomList(resultHandler: resultHandler)
+    }
+    
+    public static func createRoom(title: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
+        main.createRoom(title: title, password: password, resultHandler: resultHandler)
+    }
 }

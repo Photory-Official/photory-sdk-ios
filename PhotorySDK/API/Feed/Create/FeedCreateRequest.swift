@@ -14,6 +14,7 @@ struct FeedCreateRequest: Request, Respondable {
     
     var key: String { "feed" }
     
+    let imageData = Data()
     let image: [UIImage] // NOTE: 어떻게 서버로 보낼까 타입이 뭘까?
     let roomId: Int64
     let title: String

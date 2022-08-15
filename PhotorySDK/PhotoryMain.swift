@@ -68,34 +68,54 @@ class PhotoryMain {
         }
     }
     
-    // MARK: - Room List
-    func createRoomListQuery(with params: RoomListQuery.Params = .init()) -> RoomListQuery {
-        RoomListQuery(apiClient: apiClient, params: params)
-    }
-    
     // MARK: - Room
-    func createRoom(with params: Room.Params) {
-//        roomManager.createRoom(with: params)
+    
+    func fetchRoomList(resultHandler: @escaping (Result<[Room], Error>) -> Void) {
+        roomManager.fetchRoomList { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
     }
     
-    func enterRoom(id: String) {
-        guard let room = roomManager.rooms[id] else { return }
-        room.enter()
+    
+    func createRoom(title: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
+        roomManager.createRoom(title: title, password: password) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
     }
     
-    func leaveRoom(id: String) {
-        guard let room = roomManager.rooms[id] else { return }
-        room.leave()
-    }
     
-    func deleteRoom(id: String) {
-        guard let room = roomManager.rooms[id] else { return }
-        room.delete()
-    }
-    
-    func changePassword(to newPassword: String, forRoomID id: String) {
-        guard let room = roomManager.rooms[id] else { return }
-        room.changePassword(to: newPassword)
-    }
+//    // MARK: - Room List
+//    func createRoomListQuery(with params: RoomListQuery.Params = .init()) -> RoomListQuery {
+//        RoomListQuery(apiClient: apiClient, params: params)
+//    }
+//
+//    // MARK: - Room
+//    func createRoom(with params: Room.Params) {
+////        roomManager.createRoom(with: params)
+//    }
+//
+//    func enterRoom(id: String) {
+//        guard let room = roomManager.rooms[id] else { return }
+//        room.enter()
+//    }
+//
+//    func leaveRoom(id: String) {
+//        guard let room = roomManager.rooms[id] else { return }
+//        room.leave()
+//    }
+//
+//    func deleteRoom(id: String) {
+//        guard let room = roomManager.rooms[id] else { return }
+//        room.delete()
+//    }
+//
+//    func changePassword(to newPassword: String, forRoomID id: String) {
+//        guard let room = roomManager.rooms[id] else { return }
+//        room.changePassword(to: newPassword)
+//    }
 }
 

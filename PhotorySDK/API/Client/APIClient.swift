@@ -42,6 +42,7 @@ class APIClient: ObservableObject {
         var localizedDescription: String {
             switch self {
             case .statusCode(let statusCode, let message):
+                print("🚨 statusCode \(statusCode)")
                 return (400..<500) ~= statusCode ? message : "네트워크 에러가 발생했습니다."
             default:
                 return "네트워크 에러가 발생했습니다."

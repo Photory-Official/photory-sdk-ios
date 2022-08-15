@@ -7,8 +7,9 @@
 
 import Foundation
 
+// NOTE: - RoomManager로 코드를 이관할 예정
 extension APIClient {
-    
+    // NOTE: - 이관
     func createRoom(title: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
         let request = RoomCreateRequest(title: title, password: password)
         self.send(request) { result in
@@ -35,6 +36,7 @@ extension APIClient {
         }
     }
     
+    // NOTE: - 이관
     func fetchRoomList(resultHandler: @escaping (Result<[Room], Error>) -> Void) {
         let request = RoomListRequest()
         self.send(request) { result in
