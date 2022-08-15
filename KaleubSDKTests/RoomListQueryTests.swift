@@ -22,7 +22,7 @@ class RoomListQueryTests: XCTestCase {
         let expectation = XCTestExpectation()
         expectation.expectedFulfillmentCount = 1
         
-        self.query = KaleubMain().createRoomListQuery()
+        self.query = PhotoryMain().createRoomListQuery()
         self.query?.load { result in
             switch result {
             case .success(let rooms):

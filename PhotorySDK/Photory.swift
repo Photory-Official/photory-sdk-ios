@@ -1,6 +1,6 @@
 //
-//  Kaleub.swift
-//  KaleubSDK
+//  Photory.swift
+//  PhotorySDK
 //
 //  Created by Jaesung Lee on 2022/06/16.
 //

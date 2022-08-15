@@ -1,6 +1,6 @@
 //
 //  AppStorageManager.swift
-//  KaleubSDK
+//  PhotorySDK
 //
 //  Created by Hamlit Jason on 2022/06/17.
 //

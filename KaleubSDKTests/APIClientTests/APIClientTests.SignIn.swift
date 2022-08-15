@@ -11,7 +11,7 @@ import XCTest
 extension APIClientTests {
     
     func test_signIn() throws {
-        let email = "heyaeazoa07a1@gmail.com"
+        let email = "heyaeazog07a1@gmail.com"
         let password = "12a3456"
         
         let expectation = XCTestExpectation()
