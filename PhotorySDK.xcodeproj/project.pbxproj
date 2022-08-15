@@ -25,11 +25,10 @@
 		A9321E2A286193D100DE1BB3 /* RoomOwnerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9321E29286193D100DE1BB3 /* RoomOwnerRequest.swift */; };
 		A9321E2C286193DA00DE1BB3 /* RoomOwnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9321E2B286193DA00DE1BB3 /* RoomOwnerResponse.swift */; };
 		A9F0AB56285B22B0001171F1 /* KaleubSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB55285B22B0001171F1 /* KaleubSDK.docc */; };
-		A9F0AB5C285B22B0001171F1 /* KaleubSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F0AB51285B22B0001171F1 /* KaleubSDK.framework */; };
-		A9F0AB61285B22B0001171F1 /* KaleubSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB60285B22B0001171F1 /* KaleubSDKTests.swift */; };
+		A9F0AB5C285B22B0001171F1 /* PhotorySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F0AB51285B22B0001171F1 /* PhotorySDK.framework */; };
 		A9F0AB62285B22B0001171F1 /* KaleubSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F0AB54285B22B0001171F1 /* KaleubSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9F0AB6F285B2CBA001171F1 /* Kaleub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB6E285B2CBA001171F1 /* Kaleub.swift */; };
-		A9F0AB71285B2CFC001171F1 /* KaleubMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB70285B2CFC001171F1 /* KaleubMain.swift */; };
+		A9F0AB6F285B2CBA001171F1 /* Photory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB6E285B2CBA001171F1 /* Photory.swift */; };
+		A9F0AB71285B2CFC001171F1 /* PhotoryMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB70285B2CFC001171F1 /* PhotoryMain.swift */; };
 		A9F0AB73285B32C4001171F1 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB72285B32C4001171F1 /* Room.swift */; };
 		A9F0AB75285B32D6001171F1 /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0AB74285B32D6001171F1 /* RoomManager.swift */; };
 		B1412AD1285B383F006ED59E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1412AD0285B383F006ED59E /* APIClient.swift */; };
@@ -118,13 +117,12 @@
 		A9321E272861934000DE1BB3 /* RoomKickResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomKickResponse.swift; sourceTree = "<group>"; };
 		A9321E29286193D100DE1BB3 /* RoomOwnerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomOwnerRequest.swift; sourceTree = "<group>"; };
 		A9321E2B286193DA00DE1BB3 /* RoomOwnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomOwnerResponse.swift; sourceTree = "<group>"; };
-		A9F0AB51285B22B0001171F1 /* KaleubSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KaleubSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9F0AB51285B22B0001171F1 /* PhotorySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotorySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F0AB54285B22B0001171F1 /* KaleubSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KaleubSDK.h; sourceTree = "<group>"; };
 		A9F0AB55285B22B0001171F1 /* KaleubSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = KaleubSDK.docc; sourceTree = "<group>"; };
-		A9F0AB5B285B22B0001171F1 /* KaleubSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaleubSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9F0AB60285B22B0001171F1 /* KaleubSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaleubSDKTests.swift; sourceTree = "<group>"; };
-		A9F0AB6E285B2CBA001171F1 /* Kaleub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaleub.swift; sourceTree = "<group>"; };
-		A9F0AB70285B2CFC001171F1 /* KaleubMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaleubMain.swift; sourceTree = "<group>"; };
+		A9F0AB5B285B22B0001171F1 /* PhotorySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotorySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9F0AB6E285B2CBA001171F1 /* Photory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photory.swift; sourceTree = "<group>"; };
+		A9F0AB70285B2CFC001171F1 /* PhotoryMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoryMain.swift; sourceTree = "<group>"; };
 		A9F0AB72285B32C4001171F1 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		A9F0AB74285B32D6001171F1 /* RoomManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
 		B1412AD0285B383F006ED59E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -184,7 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F0AB5C285B22B0001171F1 /* KaleubSDK.framework in Frameworks */,
+				A9F0AB5C285B22B0001171F1 /* PhotorySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +264,7 @@
 		A9F0AB47285B22B0001171F1 = {
 			isa = PBXGroup;
 			children = (
-				A9F0AB53285B22B0001171F1 /* KaleubSDK */,
+				A9F0AB53285B22B0001171F1 /* PhotorySDK */,
 				A9F0AB5F285B22B0001171F1 /* KaleubSDKTests */,
 				A9F0AB52285B22B0001171F1 /* Products */,
 				B1D5741F287C4D7200A6E40C /* Frameworks */,
@@ -276,18 +274,18 @@
 		A9F0AB52285B22B0001171F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9F0AB51285B22B0001171F1 /* KaleubSDK.framework */,
-				A9F0AB5B285B22B0001171F1 /* KaleubSDKTests.xctest */,
+				A9F0AB51285B22B0001171F1 /* PhotorySDK.framework */,
+				A9F0AB5B285B22B0001171F1 /* PhotorySDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A9F0AB53285B22B0001171F1 /* KaleubSDK */ = {
+		A9F0AB53285B22B0001171F1 /* PhotorySDK */ = {
 			isa = PBXGroup;
 			children = (
 				A9F0AB54285B22B0001171F1 /* KaleubSDK.h */,
-				A9F0AB6E285B2CBA001171F1 /* Kaleub.swift */,
-				A9F0AB70285B2CFC001171F1 /* KaleubMain.swift */,
+				A9F0AB6E285B2CBA001171F1 /* Photory.swift */,
+				A9F0AB70285B2CFC001171F1 /* PhotoryMain.swift */,
 				B1C86C54285C5153002B28C5 /* AppStorageManager.swift */,
 				B1C86C56285C51AD002B28C5 /* Common */,
 				B1412ADD285B4011006ED59E /* Models */,
@@ -295,7 +293,7 @@
 				A9F0AB76285B32EC001171F1 /* Room */,
 				A9F0AB55285B22B0001171F1 /* KaleubSDK.docc */,
 			);
-			path = KaleubSDK;
+			path = PhotorySDK;
 			sourceTree = "<group>";
 		};
 		A9F0AB5F285B22B0001171F1 /* KaleubSDKTests */ = {
@@ -303,7 +301,6 @@
 			children = (
 				A9321E0B286180B100DE1BB3 /* RoomListQueryTests.swift */,
 				B198C66A286A1AF3002184CA /* APIClientTests */,
-				A9F0AB60285B22B0001171F1 /* KaleubSDKTests.swift */,
 			);
 			path = KaleubSDKTests;
 			sourceTree = "<group>";
@@ -543,9 +540,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A9F0AB50285B22B0001171F1 /* KaleubSDK */ = {
+		A9F0AB50285B22B0001171F1 /* PhotorySDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9F0AB65285B22B0001171F1 /* Build configuration list for PBXNativeTarget "KaleubSDK" */;
+			buildConfigurationList = A9F0AB65285B22B0001171F1 /* Build configuration list for PBXNativeTarget "PhotorySDK" */;
 			buildPhases = (
 				A9F0AB4C285B22B0001171F1 /* Headers */,
 				A9F0AB4D285B22B0001171F1 /* Sources */,
@@ -557,14 +554,14 @@
 			);
 			dependencies = (
 			);
-			name = KaleubSDK;
+			name = PhotorySDK;
 			productName = KaleubSDK;
-			productReference = A9F0AB51285B22B0001171F1 /* KaleubSDK.framework */;
+			productReference = A9F0AB51285B22B0001171F1 /* PhotorySDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A9F0AB5A285B22B0001171F1 /* KaleubSDKTests */ = {
+		A9F0AB5A285B22B0001171F1 /* PhotorySDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9F0AB68285B22B0001171F1 /* Build configuration list for PBXNativeTarget "KaleubSDKTests" */;
+			buildConfigurationList = A9F0AB68285B22B0001171F1 /* Build configuration list for PBXNativeTarget "PhotorySDKTests" */;
 			buildPhases = (
 				A9F0AB57285B22B0001171F1 /* Sources */,
 				A9F0AB58285B22B0001171F1 /* Frameworks */,
@@ -575,9 +572,9 @@
 			dependencies = (
 				A9F0AB5E285B22B0001171F1 /* PBXTargetDependency */,
 			);
-			name = KaleubSDKTests;
+			name = PhotorySDKTests;
 			productName = KaleubSDKTests;
-			productReference = A9F0AB5B285B22B0001171F1 /* KaleubSDKTests.xctest */;
+			productReference = A9F0AB5B285B22B0001171F1 /* PhotorySDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -598,7 +595,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A9F0AB4B285B22B0001171F1 /* Build configuration list for PBXProject "KaleubSDK" */;
+			buildConfigurationList = A9F0AB4B285B22B0001171F1 /* Build configuration list for PBXProject "PhotorySDK" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -611,8 +608,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A9F0AB50285B22B0001171F1 /* KaleubSDK */,
-				A9F0AB5A285B22B0001171F1 /* KaleubSDKTests */,
+				A9F0AB50285B22B0001171F1 /* PhotorySDK */,
+				A9F0AB5A285B22B0001171F1 /* PhotorySDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -671,7 +668,7 @@
 				A9321E2A286193D100DE1BB3 /* RoomOwnerRequest.swift in Sources */,
 				A9321E1F286191C600DE1BB3 /* RoomDisableResponse.swift in Sources */,
 				A9321E2C286193DA00DE1BB3 /* RoomOwnerResponse.swift in Sources */,
-				A9F0AB71285B2CFC001171F1 /* KaleubMain.swift in Sources */,
+				A9F0AB71285B2CFC001171F1 /* PhotoryMain.swift in Sources */,
 				B1412ADC285B38D3006ED59E /* Response.swift in Sources */,
 				B187B9D32876EB0F006EA83E /* FeedDeleteRequest.swift in Sources */,
 				A9321E192861919900DE1BB3 /* RoomPasswordRequest.swift in Sources */,
@@ -683,7 +680,7 @@
 				B187B9D72876F6F5006EA83E /* FeedDetailRequest.swift in Sources */,
 				B1D4B9482879C43200E5C937 /* RoomDetailResponse.swift in Sources */,
 				B1412AD7285B38A3006ED59E /* SignUpRequest.swift in Sources */,
-				A9F0AB6F285B2CBA001171F1 /* Kaleub.swift in Sources */,
+				A9F0AB6F285B2CBA001171F1 /* Photory.swift in Sources */,
 				B1412ADA285B38C2006ED59E /* Request.swift in Sources */,
 				B1412AD1285B383F006ED59E /* APIClient.swift in Sources */,
 				A9321E21286191D600DE1BB3 /* RoomLeaveRequest.swift in Sources */,
@@ -702,7 +699,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F0AB61285B22B0001171F1 /* KaleubSDKTests.swift in Sources */,
 				B198C66E286A1B7A002184CA /* APIClientTests.Room.swift in Sources */,
 				B1412AE6285B4D8B006ED59E /* APIClientTests.SignIn.swift in Sources */,
 				B198C669286A1A97002184CA /* APIClientTests.SignUp.swift in Sources */,
@@ -717,7 +713,7 @@
 /* Begin PBXTargetDependency section */
 		A9F0AB5E285B22B0001171F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A9F0AB50285B22B0001171F1 /* KaleubSDK */;
+			target = A9F0AB50285B22B0001171F1 /* PhotorySDK */;
 			targetProxy = A9F0AB5D285B22B0001171F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -938,7 +934,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9F0AB4B285B22B0001171F1 /* Build configuration list for PBXProject "KaleubSDK" */ = {
+		A9F0AB4B285B22B0001171F1 /* Build configuration list for PBXProject "PhotorySDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9F0AB63285B22B0001171F1 /* Debug */,
@@ -947,7 +943,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9F0AB65285B22B0001171F1 /* Build configuration list for PBXNativeTarget "KaleubSDK" */ = {
+		A9F0AB65285B22B0001171F1 /* Build configuration list for PBXNativeTarget "PhotorySDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9F0AB66285B22B0001171F1 /* Debug */,
@@ -956,7 +952,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9F0AB68285B22B0001171F1 /* Build configuration list for PBXNativeTarget "KaleubSDKTests" */ = {
+		A9F0AB68285B22B0001171F1 /* Build configuration list for PBXNativeTarget "PhotorySDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9F0AB69285B22B0001171F1 /* Debug */,

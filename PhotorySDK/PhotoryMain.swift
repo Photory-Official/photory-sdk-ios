@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KaleubMain {
+class PhotoryMain {
     let version: String = "1.0.0" // [NEXT_VERSION]
     let roomManager: RoomManager
     let apiClient: APIClient

@@ -7,6 +7,6 @@
 
 import Foundation
 
-public class Kaleub {
-    static let main = KaleubMain()
+public class Photory {
+    static let main = PhotoryMain()
 }
