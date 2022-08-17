@@ -78,7 +78,6 @@ class PhotoryMain {
         }
     }
     
-    
     func createRoom(title: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
         roomManager.createRoom(title: title, password: password) { result in
             DispatchQueue.main.async {
@@ -92,6 +91,9 @@ class PhotoryMain {
         get { AppStorageManager.token }
         set { AppStorageManager.token = newValue }
     }
+    
+    
+    
     
 //    // MARK: - Room List
 //    func createRoomListQuery(with params: RoomListQuery.Params = .init()) -> RoomListQuery {
