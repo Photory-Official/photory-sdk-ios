@@ -36,6 +36,31 @@ public class Photory {
         main.createRoom(title: title, password: password, resultHandler: resultHandler)
     }
     
+    
+    public static func enterRoom(code: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
+        main.enterRoom(code: code, password: password, resultHandler: resultHandler)
+    }
+    
+    public static func leaveRoom(roomId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        main.leaveRoom(roomId: roomId, resultHandler: resultHandler)
+    }
+    
+    public static func disableRoom(roomId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        main.disableRoom(roomId: roomId, resultHandler: resultHandler)
+    }
+    
+    public static func kickRoom(roomId: Int64, deleteUserId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        main.kickRoom(roomId: roomId, deleteUserId: deleteUserId, resultHandler: resultHandler)
+    }
+    
+    public static func passwordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        main.passwordRoom(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword, resultHandler: resultHandler)
+    }
+    
+    public static func changeOwnerRoom(roomId: Int64, delegatedUserId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        main.changeOwnerRoom(roomId: roomId, delegatedUserId: delegatedUserId, resultHandler: resultHandler)
+    }
+    
 //    public static func
     
     // MARK: - AppStorage
