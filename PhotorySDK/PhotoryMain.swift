@@ -85,6 +85,54 @@ class PhotoryMain {
             }
         }
     }
+    
+    func enterRoom(code: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
+        roomManager.enterRoom(code: code, password: password) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
+    func leaveRoom(roomId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        roomManager.leaveRoom(roomId: roomId) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
+    func disableRoom(roomId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        roomManager.disableRoom(roomId: roomId) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
+    func kickRoom(roomId: Int64, deleteUserId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        roomManager.kickRoom(roomId: roomId, deleteUserId: deleteUserId) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
+    func passwordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        roomManager.passwordRoom(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
+    func changeOwnerRoom(roomId: Int64, delegatedUserId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        roomManager.changeOwnerRoom(roomId: roomId, delegatedUserId: delegatedUserId) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
    
     /// userToken토큰 (고유 id)
     var userToken: String? {

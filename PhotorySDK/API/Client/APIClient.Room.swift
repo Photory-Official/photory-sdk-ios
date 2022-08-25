@@ -22,7 +22,7 @@ extension APIClient {
             }
         }
     }
-    
+    // NOTE: - 이관
     func enterRoom(code: String, password: String, resultHandler: @escaping (Result<Room?, Error>) -> Void) {
         let request = RoomEnterRequest(code: code, password: password)
         self.send(request) { result in
@@ -50,7 +50,7 @@ extension APIClient {
             }
         }
     }
-    
+    //NOTE: - 이관
     func leaveRoom(roomId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let request = RoomLeaveRequest(roomId: roomId)
         self.send(request) { result in
@@ -62,7 +62,7 @@ extension APIClient {
             }
         }
     }
-    
+    //NOTE: - 이관
     func disableRoom(roomId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let request = RoomDisableRequest(roomId: roomId)
         self.send(request) { result in
@@ -74,7 +74,7 @@ extension APIClient {
             }
         }
     }
-    
+    //NOTE: - 이관
     func kickRoom(roomId: Int64, deleteUserId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let request = RoomKickRequest(roomId: roomId, deletedUserId: deleteUserId)
         self.send(request) { result in
@@ -86,7 +86,7 @@ extension APIClient {
             }
         }
     }
-    
+    //NOTE: - 이관
     func passwordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let request = RoomPasswordRequest(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword)
         self.send(request) { result in
@@ -98,7 +98,7 @@ extension APIClient {
             }
         }
     }
-    
+    //NOTE: - 이관
     func changeOwnerRoom(roomId: Int64, delegatedUserId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let request = RoomOwnerRequest(roomId: roomId, delegatedUserId: delegatedUserId)
         self.send(request) { result in

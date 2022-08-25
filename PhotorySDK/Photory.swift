@@ -36,6 +36,8 @@ public class Photory {
         main.createRoom(title: title, password: password, resultHandler: resultHandler)
     }
     
+//    public static func
+    
     // MARK: - AppStorage
     
     public static var userToken: String? {
