@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Alamofire
 @testable import PhotorySDK
 
 extension APIClientTests {
@@ -115,4 +116,10 @@ extension APIClientTests {
         
         wait(for: [expectation], timeout: 30)
     }
+    
+    // MARK: - Alamofire로 multipart 테스트
+    func test_AF_createFeed() {
+        
+    }
+    
 }
