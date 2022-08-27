@@ -5,7 +5,7 @@
 //  Created by Jaesung Lee on 2022/06/16.
 //
 
-import Foundation
+import UIKit
 
 public class Photory {
     static let main = PhotoryMain()
@@ -53,15 +53,31 @@ public class Photory {
         main.kickRoom(roomId: roomId, deleteUserId: deleteUserId, resultHandler: resultHandler)
     }
     
-    public static func passwordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        main.passwordRoom(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword, resultHandler: resultHandler)
+    public static func changePasswordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        main.changePasswordRoom(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword, resultHandler: resultHandler)
     }
     
     public static func changeOwnerRoom(roomId: Int64, delegatedUserId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         main.changeOwnerRoom(roomId: roomId, delegatedUserId: delegatedUserId, resultHandler: resultHandler)
     }
+     
+    // MARK: - Feed
     
-//    public static func
+    public static func createFeed(image: [UIImage], roomId: Int64, title: String, content: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        main.createFeed(image: image, roomId: roomId, title: title, content: content, resultHandler: resultHandler)
+    }
+    
+    public static func updateFeed(feedId: Int64, title: String, content: String, resultHandler: @escaping (Result<Feed, Error>) -> Void) {
+        main.updateFeed(feedId: feedId, title: title, content: content, resultHandler: resultHandler)
+    }
+    
+    public static func deleteFeed(feedId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        main.deleteFeed(feedId: feedId, resultHandler: resultHandler)
+    }
+    
+    public static func fetchFeedList(roomId: Int64, size: Int, lastFeedId: Int64, resultHandler: @escaping (Result<FeedContent?, Error>) -> Void) {
+        main.fetchFeedList(roomId: roomId, size: size, lastFeedId: lastFeedId, resultHandler: resultHandler)
+    }
     
     // MARK: - AppStorage
     

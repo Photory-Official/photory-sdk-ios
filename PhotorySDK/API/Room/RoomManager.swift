@@ -86,7 +86,7 @@ class RoomManager {
         }
     }
     
-    func passwordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+    func changePasswordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
         let request = RoomPasswordRequest(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword)
         apiClient.send(request) { result in
             switch result {

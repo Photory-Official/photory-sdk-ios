@@ -5,16 +5,18 @@
 //  Created by Jaesung Lee on 2022/06/16.
 //
 
-import Foundation
+import UIKit
 
 class PhotoryMain {
     let version: String = "1.0.0" // [NEXT_VERSION]
     let roomManager: RoomManager
+    let feedManager: FeedManager
     let apiClient: APIClient
     
     init() {
         self.apiClient = APIClient()
         self.roomManager = RoomManager()
+        self.feedManager = FeedManager()
     }
     
     // MARK: - Sign up
@@ -118,8 +120,8 @@ class PhotoryMain {
         }
     }
     
-    func passwordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
-        roomManager.passwordRoom(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword) { result in
+    func changePasswordRoom(roomId: Int64, beforePassword: String, afterPassword: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        roomManager.changePasswordRoom(roomId: roomId, beforePassword: beforePassword, afterPassword: afterPassword) { result in
             DispatchQueue.main.async {
                 resultHandler(result)
             }
@@ -133,12 +135,47 @@ class PhotoryMain {
             }
         }
     }
-   
+    
+    // MARK: - Feed
+    
+    func createFeed(image: [UIImage], roomId: Int64, title: String, content: String, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        feedManager.createFeed(image: image, roomId: roomId, title: title, content: content) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
+    func updateFeed(feedId: Int64, title: String, content: String, resultHandler: @escaping (Result<Feed, Error>) -> Void) {
+        feedManager.updateFeed(feedId: feedId, title: title, content: content) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
+    func deleteFeed(feedId: Int64, resultHandler: @escaping (Result<Void, Error>) -> Void) {
+        feedManager.deleteFeed(feedId: feedId) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
+    func fetchFeedList(roomId: Int64, size: Int, lastFeedId: Int64, resultHandler: @escaping (Result<FeedContent?, Error>) -> Void) {
+        feedManager.fetchFeedList(roomId: roomId, size: size, lastFeedId: lastFeedId) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
     /// userToken토큰 (고유 id)
     var userToken: String? {
         get { AppStorageManager.token }
         set { AppStorageManager.token = newValue }
     }
+    
     
     
     

@@ -53,6 +53,7 @@
 		B198C669286A1A97002184CA /* APIClientTests.SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198C668286A1A97002184CA /* APIClientTests.SignUp.swift */; };
 		B198C66C286A1B11002184CA /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198C66B286A1B11002184CA /* APIClientTests.swift */; };
 		B198C66E286A1B7A002184CA /* APIClientTests.Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198C66D286A1B7A002184CA /* APIClientTests.Room.swift */; };
+		B198E79028B9FFC600EB0F24 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198E78F28B9FFC600EB0F24 /* FeedManager.swift */; };
 		B1C86C4E285C4789002B28C5 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C4D285C4789002B28C5 /* SignInRequest.swift */; };
 		B1C86C51285C47A1002B28C5 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C50285C47A1002B28C5 /* SignInResponse.swift */; };
 		B1C86C55285C5153002B28C5 /* AppStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C86C54285C5153002B28C5 /* AppStorageManager.swift */; };
@@ -147,6 +148,7 @@
 		B198C668286A1A97002184CA /* APIClientTests.SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.SignUp.swift; sourceTree = "<group>"; };
 		B198C66B286A1B11002184CA /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		B198C66D286A1B7A002184CA /* APIClientTests.Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.Room.swift; sourceTree = "<group>"; };
+		B198E78F28B9FFC600EB0F24 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		B1C86C4D285C4789002B28C5 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		B1C86C50285C47A1002B28C5 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		B1C86C54285C5153002B28C5 /* AppStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageManager.swift; sourceTree = "<group>"; };
@@ -290,7 +292,6 @@
 				B1C86C56285C51AD002B28C5 /* Common */,
 				B1412ADD285B4011006ED59E /* Models */,
 				B1412ACF285B3830006ED59E /* API */,
-				A9F0AB76285B32EC001171F1 /* Room */,
 				A9F0AB55285B22B0001171F1 /* PhotortSDK.docc */,
 			);
 			path = PhotorySDK;
@@ -303,15 +304,6 @@
 				B198C66A286A1AF3002184CA /* APIClientTests */,
 			);
 			path = KaleubSDKTests;
-			sourceTree = "<group>";
-		};
-		A9F0AB76285B32EC001171F1 /* Room */ = {
-			isa = PBXGroup;
-			children = (
-				A9F0AB74285B32D6001171F1 /* RoomManager.swift */,
-				A9321E0728617C5A00DE1BB3 /* RoomListQuery.swift */,
-			);
-			path = Room;
 			sourceTree = "<group>";
 		};
 		B1412ACF285B3830006ED59E /* API */ = {
@@ -369,6 +361,8 @@
 		B1412AE0285B4A4E006ED59E /* Room */ = {
 			isa = PBXGroup;
 			children = (
+				A9F0AB74285B32D6001171F1 /* RoomManager.swift */,
+				A9321E0728617C5A00DE1BB3 /* RoomListQuery.swift */,
 				B1D4B9442879C40600E5C937 /* Detail */,
 				A9321E0F2861864D00DE1BB3 /* List */,
 				A9321E122861879E00DE1BB3 /* Create */,
@@ -385,6 +379,7 @@
 		B151A6AE2876693F00BA3993 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				B198E78F28B9FFC600EB0F24 /* FeedManager.swift */,
 				B187B9D12876EB01006EA83E /* Delete */,
 				B187B9C92876DED9006EA83E /* Create */,
 				B187B9CE2876E2CE006EA83E /* Update */,
@@ -678,6 +673,7 @@
 				B187B9D92876F6FF006EA83E /* FeedDetailResponse.swift in Sources */,
 				B151A6B22876696F00BA3993 /* FeedCreateResponse.swift in Sources */,
 				B187B9D72876F6F5006EA83E /* FeedDetailRequest.swift in Sources */,
+				B198E79028B9FFC600EB0F24 /* FeedManager.swift in Sources */,
 				B1D4B9482879C43200E5C937 /* RoomDetailResponse.swift in Sources */,
 				B1412AD7285B38A3006ED59E /* SignUpRequest.swift in Sources */,
 				A9F0AB6F285B2CBA001171F1 /* Photory.swift in Sources */,
