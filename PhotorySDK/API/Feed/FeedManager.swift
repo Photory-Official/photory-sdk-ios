@@ -60,4 +60,18 @@ class FeedManager {
             }
         }
     }
+    
+    func feedDetail(feedId: Int64, resultHandler: @escaping (Result<Feed?, Error>) -> Void) {
+        let request = FeedDetailRequest(feedId: feedId)
+        apiClient.send(request) { result in
+            switch result {
+            case .success(let response):
+                let feed = response.feed
+                resultHandler(.success(feed))
+                break
+            case .failure(let error):
+                resultHandler(.failure(error))
+            }
+        }
+    }
 }

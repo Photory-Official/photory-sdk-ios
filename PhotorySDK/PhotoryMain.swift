@@ -170,6 +170,14 @@ class PhotoryMain {
         }
     }
     
+    func feedDetail(feedId: Int64, resultHandler: @escaping (Result<Feed?, Error>) -> Void) {
+        feedManager.feedDetail(feedId: feedId) { result in
+            DispatchQueue.main.async {
+                resultHandler(result)
+            }
+        }
+    }
+    
     /// userToken토큰 (고유 id)
     var userToken: String? {
         get { AppStorageManager.token }

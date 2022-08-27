@@ -79,6 +79,11 @@ public class Photory {
         main.fetchFeedList(roomId: roomId, size: size, lastFeedId: lastFeedId, resultHandler: resultHandler)
     }
     
+    public static func feedDetail(feedId: Int64, resultHandler: @escaping (Result<Feed?, Error>) -> Void) {
+        main.feedDetail(feedId: feedId, resultHandler: resultHandler)
+    }
+
+    
     // MARK: - AppStorage
     
     public static var userToken: String? {

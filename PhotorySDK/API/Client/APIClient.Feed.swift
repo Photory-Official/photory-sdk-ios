@@ -60,19 +60,4 @@ extension APIClient {
             }
         }
     }
-    
-    //    func signIn(email: String, password: String, resultHandler: @escaping (Result<String, Error>) -> Void) {
-    //        let request = SignInRequest(email: email, password: password)
-    //        self.send(request) { result in
-    //            switch result {
-    //            case .success(let response):
-    //                let token = response.data ?? "token nil"
-    //                AppStorageManager.token = token
-    //                resultHandler(.success(token))
-    //            case .failure(let error):
-    //                resultHandler(.failure(error))
-    //            }
-    //        }
-    //
-    //    }
 }
