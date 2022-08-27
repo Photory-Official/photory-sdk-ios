@@ -7,6 +7,7 @@
 
 import Foundation
 
+// 이 부분은 방에서 전체 피드를 보여주는 부분입니다.
 public class FeedContent: Codable {
     // NOTE: - 이 부분은 contents로 감싸서 내려옴
     
@@ -26,7 +27,7 @@ public class FeedContent: Codable {
         public var imageUrls: [String]
     }
     
-    /// 피드 상세 컨텐츠
+    /// 룸에 나타나는 피드 상세 컨텐츠
     public var contents: [Contents]
     
     // NOTE: - 여기는 따로!

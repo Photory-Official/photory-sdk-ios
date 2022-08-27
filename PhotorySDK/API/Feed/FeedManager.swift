@@ -68,7 +68,6 @@ class FeedManager {
             case .success(let response):
                 let feed = response.feed
                 resultHandler(.success(feed))
-                break
             case .failure(let error):
                 resultHandler(.failure(error))
             }
