@@ -10,6 +10,13 @@
  - 🍑: App에서 구현되지 않았으나 SDK에서 구현된 부분 <br>
  
 ```
+ - Photory (App단과 연결하여 사용하기 위한 부분)
+ - PhotoryMain (SDK 내부와 관련한 부분)
+ - AppStorageManager (a.k.a UserDefaultManager, 디바이스 로컬 저장 데이터) 
+ - APICleint (APIRequest와 관련한 부분)
+  - RoomManager (RoomManger를 통해 Room의 APIRequest와 부분을 별도 관리)
+  - FeedManager (FeedManager를 통해 Feed의 APIRequest와 부분을 별도 관리)
+
  - Auth
   - SignUp
     - EmailValidation (이메일 중복 확인)
@@ -18,22 +25,24 @@
    - SignIn
     - SignIn (로그인)
     - SignInToken (로그인 유지)
+    
  - Room
-   - RoomDetail (해당 방 정보 상세보기)
-   - RoomList (방 리스트 가져오기)
-   - RoomCreate (방 생성)
-   - RoomEnter (방 입장)
-   - RoomPassword (방 비밀번호 변경)
-   - RoomDisable (방 삭제)
-   - RoomLeave (방 나가기)
-   - RoomOwner (방 오너 변경)
-   - RoomKick (방 강퇴)
-  - Feed
-   - FeedDelete (피드 삭제)
-   - FeedCreate (피드 생성)
-   - FeedUpdate (피드 수정)
-   - FeedDetail (피드 읽기)
-   - FeedList (피드 리스트)
+  - RoomDetail (해당 방 정보 상세보기)
+  - RoomList (방 리스트 가져오기)
+  - RoomCreate (방 생성)
+  - RoomEnter (방 입장)
+  - RoomPassword (방 비밀번호 변경)
+  - RoomDisable (방 삭제)
+  - RoomLeave (방 나가기)
+  - RoomOwner (방 오너 변경)
+  - RoomKick (방 강퇴)
+   
+ - Feed
+  - FeedDelete (피드 삭제)
+  - FeedCreate (피드 생성)
+  - FeedUpdate (피드 수정)
+  - FeedDetail (피드 읽기)
+  - FeedList (피드 리스트)
     
 ```
  
