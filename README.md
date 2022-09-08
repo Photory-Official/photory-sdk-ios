@@ -13,8 +13,8 @@
  - PhotoryMain (SDK 내부와 관련한 부분)
  - AppStorageManager (a.k.a UserDefaultManager, 디바이스 로컬 저장 데이터) 
  - APICleint (APIRequest와 관련한 부분)
-  - RoomManager (RoomManger를 통해 Room의 APIRequest와 부분을 별도 관리)
-  - FeedManager (FeedManager를 통해 Feed의 APIRequest와 부분을 별도 관리)
+  - RoomManager (RoomManger를 통해 Room의 APIRequest 부분을 별도 관리)
+  - FeedManager (FeedManager를 통해 Feed의 APIRequest 부분을 별도 관리)
  - Common
   - Request 
   - Respone
