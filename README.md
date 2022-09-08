@@ -13,9 +13,28 @@
  - Auth
   - SignUp
     - EmailValidation (이메일 중복 확인)
-    - SendVerificationMail (이메일 인증) 
-   - 방 초대 ✅ㅋㅗ드
-   - 방 초대 ✅
+    - SendVerificationMail (이메일 인증번호 전송) 
+    - AuthKeyValidation (이메일 인증번호 확인) 
+   - SignIn
+    - SignIn (로그인)
+    - SignInToken (로그인 유지)
+ - Room
+   - RoomDetail (해당 방 정보 상세보기)
+   - RoomList (방 리스트 가져오기)
+   - RoomCreate (방 생성)
+   - RoomEnter (방 입장)
+   - RoomPassword (방 비밀번호 변경)
+   - RoomDisable (방 삭제)
+   - RoomLeave (방 나가기)
+   - RoomOwner (방 오너 변경)
+   - RoomKick (방 강퇴)
+  - Feed
+   - FeedDelete (피드 삭제)
+   - FeedCreate (피드 생성)
+   - FeedUpdate (피드 수정)
+   - FeedDetail (피드 읽기)
+   - FeedList (피드 리스트)
+    
 ```
  
  ## 🚨 프로젝트 ISSUE
