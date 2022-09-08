@@ -50,10 +50,13 @@
  
  ## 🚨 프로젝트 ISSUE
  ```
-  - App 화면 전환 로직
-    - 로그인 성공 시, AuthView에서 HomeView로 이동
-    : SceneDelgate의 window를 교체하는 방식으로 구현 예정
-  - 피드의 경우에는 현재 SDK의 multipart/form-data 구현의 문제로 불완전한 상태
-  : SDK 완성하면 바로 적용 가능
-  
+  - Feed 구현 이슈
+  : feed의 이미지 전송을 위해 multipart/form-data를 사용해야 하나, 외부 라이브러리 없이 구현하는 방법에 대해 학습중
+ ```
+ 
+ ## 🆙 SDK 개선방향
+ ```
+  - 클로저를 async await로 대체
+  - 테스트 코드 작성에 Quick, Nimble 적극 활용해보기
+  - RoomListQuery를 활용하기
  ```
